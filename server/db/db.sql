@@ -61,12 +61,12 @@
 --     STDTra money NOT NULL
 -- );
 
--- CREATE TABLE test (
--- id BIGSERIAL NOT NULL PRIMARY KEY,
--- tendd VARCHAR(50) NOT NULL,
--- tentinhthanh VARCHAR(50) NOT NULL,
--- dongia money NOT NULL
--- );
+CREATE TABLE test (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+tendd VARCHAR(50) NOT NULL,
+tentinhthanh VARCHAR(50) NOT NULL,
+dongia money NOT NULL
+);
 
 
 
