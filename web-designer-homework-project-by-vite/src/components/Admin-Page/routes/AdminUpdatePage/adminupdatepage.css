@@ -1,0 +1,23 @@
+.admin-contain {
+  margin-left: 5rem !important;
+  margin-top: 3rem !important;
+}
+
+.text-center {
+  margin-bottom: 1rem;
+}
+
+.form-group .form-control {
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0.4rem;
+  border-radius: 0.4rem;
+  padding-left: 0.5rem;
+}
+
+.btnprimary {
+  margin-top: 1rem;
+  margin-left: 7rem;
+}/*# sourceMappingURL=adminupdatepage.css.map */
