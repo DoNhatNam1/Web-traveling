@@ -1,15 +1,15 @@
-#SOURCE 
-ENV: Nodejs (npm)
-DB: PostgresSQL
+#SOURCE <br/>
+ENV: Nodejs (npm)<br/>
+DB: PostgresSQL<br/>
 
-# FRONT END
-VITE
-react-router-dom
-react-icons
-AOS
-AXIOS
+# FRONT END<br/>
+VITE<br/>
+react-router-dom<br/>
+react-icons<br/>
+AOS<br/>
+AXIOS<br/>
 
-#BACK-END
-EXPRESS
-cors
-pg
+#BACK-END<br/>
+EXPRESS<br/>
+cors<br/>
+pg<br/>
