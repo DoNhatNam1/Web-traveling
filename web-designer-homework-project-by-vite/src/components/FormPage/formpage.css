@@ -14,45 +14,62 @@
 
 .createPostPage {
   width: 100%;
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   margin: auto;
 }
 .createPostPage .cpContainer {
   width: 100%;
   height: -moz-max-content;
   height: max-content;
-  padding: 6rem 1.5rem 20rem;
+  padding: 6rem 10rem 20rem;
   display: flex;
   row-gap: 3rem;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+  align-items: center;
+  justify-items: center;
   margin: auto;
   color: var(--textColor);
   z-index: 1;
   background: var(--whiteColorDeam);
 }
 .createPostPage .cpContainer .sec-title-form {
-  font-size: 20px;
+  width: auto;
+  height: auto;
+  font-size: 30px;
 }
 .createPostPage .cpContainer .inputGp {
-  width: 50%;
-  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 1.5rem;
   background: var(--whiteColor);
   border-radius: 1rem;
+  justify-items: center;
 }
-.createPostPage .cpContainer .inputGp input {
-  width: 50%;
-  padding: 5px;
+.createPostPage .cpContainer .inputGp .line-break {
+  width: auto;
+  height: 30rem;
+  padding: none;
+  margin-right: 5rem;
+  border-right: 2px solid black;
+}
+.createPostPage .cpContainer .inputGp .input-item .third-title-form {
+  width: auto;
+  height: auto;
+  margin: 1rem;
+}
+.createPostPage .cpContainer .inputGp .input-item input {
+  width: 70%;
+  padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 1rem;
   background: var(--inputColor);
+  font-size: 16px;
 }
-.createPostPage .cpContainer .inputGp .form-note {
-  width: 50%;
+.createPostPage .cpContainer .inputGp .input-item .form-note {
+  width: 70%;
   padding: 5px;
   margin: 0.5rem;
   background: var(--inputColor);
@@ -60,10 +77,15 @@
   font-size: 16px;
   resize: none;
 }
-.createPostPage .cpContainer .inputGp .btn {
+.createPostPage .cpContainer .btn-submit {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+.createPostPage .cpContainer .btn-submit .btn {
   margin: 5px;
   color: var(--whiteColorDeam);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 10px 25px;
+  padding: 12px 30px;
 }/*# sourceMappingURL=formpage.css.map */

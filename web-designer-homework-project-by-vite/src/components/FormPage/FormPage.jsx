@@ -44,19 +44,41 @@ useEffect(() =>{
     <>
     <Navbar />
     <section className='createPostPage'>
-      <div className='cpContainer '>
-        <h4 data-aos="fade-up" className='sec-title-form'> PLEASE ENTER YOUR INFORMATION</h4>
-        <div className='inputGp'> 
+      <div className='cpContainer'>
+        <h1 data-aos="fade-up" className='sec-title-form'> PLEASE ENTER YOUR INFORMATION</h1>
+        <div className='inputGp flex'>
+          <div className="input-item">
+            <h2 data-aos="fade-up" className='third-title-form'><span>Personal Information</span></h2>
         <input data-aos="fade-left" placeholder='Name...'/>
           <input data-aos="fade-left" placeholder='Phone Number...'/>
           <input data-aos="fade-left" placeholder='Address...'/>
         <textarea data-aos="fade-left" className='form-note' placeholder='Note...'/>
-        <br />
+        
+        </div> 
+
+        <div className="input-item">
+        <div className="line-break">
+        </div>
+        </div>
+
+        <div className="input-item">
+          <h2 data-aos="fade-up" className='third-title-form'><span>Personal Information</span></h2>
+        <input data-aos="fade-left" placeholder='Name...'/>
+          <input data-aos="fade-left" placeholder='Phone Number...'/>
+          <input data-aos="fade-left" placeholder='Address...'/>
+        <textarea data-aos="fade-left" className='form-note' placeholder='Note...'/>
+        
+          </div>  
+            
+        </div>
+
+        <div className="btn-submit flex">
         <button data-aos="fade-right" type='submit' className='btn'>BOOK</button>
         <Link to='..' relative='path'>
           <button data-aos="fade-right" className='btn'>Cancel</button>
           </Link>
         </div>
+
       </div>
     </section>
     <Footer />
