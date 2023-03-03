@@ -46,36 +46,38 @@ useEffect(() =>{
     <section className='createPostPage'>
       <div className='cpContainer'>
         <h1 data-aos="fade-up" className='sec-title-form'> PLEASE ENTER YOUR INFORMATION</h1>
+
         <div className='inputGp flex'>
+
+        <div className="input-item">
+          <h3 data-aos="fade-up" className='third-title-form'><span>Package Information</span></h3>
+        <input data-aos="fade-right" placeholder='Name...'/>
+          <input data-aos="fade-right" placeholder='Phone Number...'/>
+          <input data-aos="fade-right" placeholder='Address...'/>
+        <textarea data-aos="fade-right" className='form-note' placeholder='Note...'/>
+          </div> 
+
           <div className="input-item">
-            <h2 data-aos="fade-up" className='third-title-form'><span>Personal Information</span></h2>
+            <h3 data-aos="fade-up" className='third-title-form'><span>Personal Information</span></h3>
+            <form data-aos="fade-left" className='Select-form-container'>
+              <select className='Select-form-item' id="country" name="country">
+              <option value="au">Australia</option>
+              <option value="ca">Canada</option>
+              <option value="usa">USA</option>
+                </select>
+            </form>
         <input data-aos="fade-left" placeholder='Name...'/>
           <input data-aos="fade-left" placeholder='Phone Number...'/>
           <input data-aos="fade-left" placeholder='Address...'/>
-        <textarea data-aos="fade-left" className='form-note' placeholder='Note...'/>
-        
+          <input data-aos="fade-left" placeholder='Address...'/>
         </div> 
 
-        <div className="input-item">
-        <div className="line-break">
-        </div>
-        </div>
-
-        <div className="input-item">
-          <h2 data-aos="fade-up" className='third-title-form'><span>Personal Information</span></h2>
-        <input data-aos="fade-left" placeholder='Name...'/>
-          <input data-aos="fade-left" placeholder='Phone Number...'/>
-          <input data-aos="fade-left" placeholder='Address...'/>
-        <textarea data-aos="fade-left" className='form-note' placeholder='Note...'/>
-        
-          </div>  
-            
         </div>
 
         <div className="btn-submit flex">
-        <button data-aos="fade-right" type='submit' className='btn'>BOOK</button>
+        <button type='submit' className='btn'>BOOK</button>
         <Link to='..' relative='path'>
-          <button data-aos="fade-right" className='btn'>Cancel</button>
+          <button className='btn'>Cancel</button>
           </Link>
         </div>
 

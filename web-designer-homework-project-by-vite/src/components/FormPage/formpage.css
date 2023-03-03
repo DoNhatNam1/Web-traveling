@@ -31,34 +31,36 @@
   justify-items: center;
   margin: auto;
   color: var(--textColor);
-  z-index: 1;
   background: var(--whiteColorDeam);
 }
 .createPostPage .cpContainer .sec-title-form {
   width: auto;
   height: auto;
-  font-size: 30px;
+  font-size: 25px;
 }
 .createPostPage .cpContainer .inputGp {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
-  padding: 1.5rem;
-  background: var(--whiteColor);
-  border-radius: 1rem;
-  justify-items: center;
+  height: 100%;
+  display: grid;
+  row-gap: 10px;
+  border-radius: 10px;
+  align-items: center;
+  background: var(--cardBG);
+  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  overflow: hidden;
 }
-.createPostPage .cpContainer .inputGp .line-break {
+.createPostPage .cpContainer .inputGp .input-item {
   width: auto;
-  height: 30rem;
-  padding: none;
-  margin-right: 5rem;
-  border-right: 2px solid black;
+  height: auto;
+  margin: 1rem;
+}
+.createPostPage .cpContainer .inputGp .input-item :focus {
+  color: none;
+  border: 3px solid #555 !important;
 }
 .createPostPage .cpContainer .inputGp .input-item .third-title-form {
   width: auto;
   height: auto;
-  margin: 1rem;
+  margin: 0, 1rem;
 }
 .createPostPage .cpContainer .inputGp .input-item input {
   width: 70%;
@@ -66,7 +68,21 @@
   margin: 0.5rem;
   border-radius: 1rem;
   background: var(--inputColor);
-  font-size: 16px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  outline: none;
+}
+.createPostPage .cpContainer .inputGp .input-item select {
+  width: 70%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background: var(--inputColor);
+  font-size: 15px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  outline: none;
 }
 .createPostPage .cpContainer .inputGp .input-item .form-note {
   width: 70%;
@@ -74,8 +90,11 @@
   margin: 0.5rem;
   background: var(--inputColor);
   border-radius: 1rem;
-  font-size: 16px;
+  font-size: 15px;
   resize: none;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  outline: none;
 }
 .createPostPage .cpContainer .btn-submit {
   width: -moz-fit-content;

@@ -31,42 +31,41 @@
         justify-items: center;
         margin: auto;
         color: var(--textColor);
-        z-index: 1;
         background: var(--whiteColorDeam);
 
 
         .sec-title-form{
             width: auto;
             height: auto;
-            font-size: 30px;
+            font-size: 25px;
         }
 
         .inputGp{
-            width: fit-content;
-            margin: auto;
-            padding: 1.5rem;
-            background: var(--whiteColor);
-            border-radius: 1rem;
-            justify-items: center;
-
-
-
-                .line-break{
-                    width: auto;
-                    height: 30rem;
-                    padding: none;
-                    margin-right: 5rem;
-                    border-right: 2px solid black;
-                }
+            height: 100%;
+            display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: var(--cardBG);
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            overflow: hidden;
+        
           
                 .input-item{
+                    width: auto;
+                    height: auto;
+                    margin: 1rem; 
 
+                    :focus {
+                        color: none;
+                        border: 3px solid #555 !important;
+                      }
+                    
 
                     .third-title-form{
                         width: auto;
                         height: auto;
-                        margin: 1rem;
-        
+                        margin: 0, 1rem;
                     }
                     
                     input{
@@ -75,18 +74,36 @@
                         margin: .5rem;
                         border-radius: 1rem;
                         background: var(--inputColor);
-                        font-size: 16px;
+                        font-size: 15px;
+                        box-sizing: border-box;
+                        border: 3px solid #ccc;
+                        outline: none;
+
                     }
         
+                    select{
+                        width: 70%;
+                        padding: .5rem;
+                        margin: .5rem;
+                        border-radius: 1rem;
+                        background: var(--inputColor);
+                        font-size: 15px;
+                        box-sizing: border-box;
+                        border: 3px solid #ccc;
+                        outline: none;
+                    }
+
                     .form-note{
                         width: 70%;
                         padding: 5px;
                         margin: .5rem;
                         background: var(--inputColor);
                         border-radius: 1rem;
-                        font-size: 16px;
+                        font-size: 15px;
                         resize: none;
-                        
+                        box-sizing: border-box;
+                        border: 3px solid #ccc;
+                        outline: none;
                     }
                    
                 }
