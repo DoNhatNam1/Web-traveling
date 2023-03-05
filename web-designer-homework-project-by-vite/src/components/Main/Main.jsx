@@ -17,7 +17,7 @@ const Data = [
   {
   MaChuyen: 1,
   imgSrc: img,
-  PhuongTien: 'xe giuong nam 50 cho',
+  PhuongTien: 'Xe giuong nam 50 cho',
   TenHDVien: 'MR dep trai',
   DonGia: '$800',
   tenDD: 'Vinh Ha Long',

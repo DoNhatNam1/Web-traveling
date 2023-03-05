@@ -21,45 +21,45 @@
 
 
 -- List table project for web-tourists
--- CREATE TABLE tTuyen (
--- MaTuyen BIGSERIAL NOT NULL PRIMARY KEY,
--- TenTuyen VARCHAR(50) NOT NULL,
--- SoNgay INT NOT NULL check(SoNgay >=1),
--- GhiChu TEXT NOT NULL
--- );
+CREATE TABLE tTuyen (
+MaTuyen BIGSERIAL NOT NULL PRIMARY KEY,
+TenTuyen VARCHAR(50) NOT NULL,
+SoNgay INT NOT NULL check(SoNgay >=1),
+GhiChu TEXT NOT NULL
+);
 
--- CREATE TABLE tDiaDiemThamQuan (
--- MaDD BIGSERIAL NOT NULL PRIMARY KEY,
--- TenDD VARCHAR(50) NOT NULL,
--- TenTinhThanh VARCHAR(50) NOT NULL
--- );
+CREATE TABLE tDiaDiemThamQuan (
+MaDD BIGSERIAL NOT NULL PRIMARY KEY,
+TenDD VARCHAR(50) NOT NULL,
+TenTinhThanh VARCHAR(50) NOT NULL
+);
 
--- CREATE TABLE tKhach (
--- MaKhach BIGSERIAL NOT NULL PRIMARY KEY,
--- TenKhach VARCHAR(50) NOT NULL,
--- DienThoai INT NOT NULL,
--- DiaChi TEXT NOT NULL
--- );
+CREATE TABLE tKhach (
+MaKhach BIGSERIAL NOT NULL PRIMARY KEY,
+TenKhach VARCHAR(50) NOT NULL,
+DienThoai INT NOT NULL,
+DiaChi TEXT NOT NULL
+);
 
--- CREATE TABLE tChuyenDuLich (
--- MaChuyen BIGSERIAL NOT NULL PRIMARY KEY,
--- MaTuyen BIGSERIAL NOT NULL REFERENCES tTuyen(MaTuyen),
--- PhuongTien VARCHAR(50) NOT NULL,
--- TenHDVien VARCHAR(50) NOT NULL,
--- DonGia money NOT NULL
--- );
+CREATE TABLE tChuyenDuLich (
+MaChuyen BIGSERIAL NOT NULL PRIMARY KEY,
+MaTuyen BIGSERIAL NOT NULL REFERENCES tTuyen(MaTuyen),
+PhuongTien VARCHAR(50) NOT NULL,
+TenHDVien VARCHAR(50) NOT NULL,
+DonGia money NOT NULL
+);
 
--- CREATE TABLE tChiTietChuyenDuLich (
--- MaChuyen BIGSERIAL NOT NULL REFERENCES tChuyenDuLich(MaChuyen),
--- MaDD BIGSERIAL NOT NULL REFERENCES tDiaDiemThamQuan(MaDD)
--- );
+CREATE TABLE tChiTietChuyenDuLich (
+MaChuyen BIGSERIAL NOT NULL REFERENCES tChuyenDuLich(MaChuyen),
+MaDD BIGSERIAL NOT NULL REFERENCES tDiaDiemThamQuan(MaDD)
+);
 
--- CREATE TABLE TDangKy (
---     MaChuyen BIGSERIAL NOT NULL REFERENCES tChuyenDuLich(MaChuyen),
---     MaKhach BIGSERIAL NOT NULL REFERENCES tKhach(MaKhach),
---     NgayDKy TIMESTAMPTZ NOT NULL,
---     STDTra money NOT NULL
--- );
+CREATE TABLE TDangKy (
+    MaChuyen BIGSERIAL NOT NULL REFERENCES tChuyenDuLich(MaChuyen),
+    MaKhach BIGSERIAL NOT NULL REFERENCES tKhach(MaKhach),
+    NgayDKy DATE NOT NULL,
+    STDTra money NOT NULL
+);
 
 CREATE TABLE test (
 id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -310,7 +310,11 @@ SELECT nhanvien.manv, nhanvien.honv, nhanvien.tenlot FROM PHONGBAN INNER JOIN NH
 
         -- Cach 2 (code dai nhung toi uu)
 
-        
+        -- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        -- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        -- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        -- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+  
 
