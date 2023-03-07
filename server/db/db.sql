@@ -318,3 +318,84 @@ SELECT nhanvien.manv, nhanvien.honv, nhanvien.tenlot FROM PHONGBAN INNER JOIN NH
 
   
 
+-- Cau 13-26/116 Giao trinh
+
+
+-- Cau 13
+SELECT *
+FROM nhanvien
+WHERE manv in 
+(
+    SELECT ma_nvien
+    FROM thanhnhan
+    WHERE tentn in 
+    (
+        SELECT tentn
+        FROM thanhnhan
+        GROUP BY tentn 
+        HAVING COUNT(*) > 1
+    )
+);
+
+-- Cau 14
+SELECT *
+FROM nhanvien
+WHERE manv NOT IN
+(
+    SELECT ma_nvien
+    FROM thanhnhan
+)
+
+-- Cau 15
+SELECT *
+FROM nhanvien
+WHERE manv IN
+(
+    SELECT ma_nvien
+    FROM thanhnhan
+     GROUP BY ma_nvien 
+        HAVING COUNT(*) > 1
+);
+
+-- Cau 16
+WITH trph_key AS (SELECT nv.manv FROM nhanvien nv INNER JOIN phongban pb  ON  pb.trphg = nv.manv)
+SELECT * FROM nhanvien WHERE manv IN (SELECT manv FROM trph_key) AND manv IN (SELECT ma_nvien FROM thanhnhan);
+
+-- Cau 17
+WITH trph_key AS (SELECT nv.manv, nv.luong FROM nhanvien nv INNER JOIN phongban pb  ON  pb.trphg = nv.manv)
+SELECT * FROM nhanvien WHERE manv IN (SELECT trph_key.manv FROM trph_key, nhanvien nv WHERE trph_key.luong < nv.luong);
+
+--Cau 18
+SELECT pb.tenpb, COUNT(nv.manv) 
+AS so_luong_nhan_vien, SUM(nv.luong) 
+as tong_luong_nhan_vien FROM nhanvien nv, phongban pb 
+GROUP BY pb.tenpb;
+
+
+
+
+
+-- ///////////////////////////////////////////////////-- DE THI GIUA KI CSDL///////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////--///////////////////////////////////////////////////--///////////////////////////////////////////////////--
+
+CREATE TABLE DMDV (
+    madv char(2) NOT NULL PRIMARY KEY,
+    tendv VARCHAR(50) NOT NULL,
+    diachi VARCHAR(50) NOT NULL,
+);
+
+CREATE TABLE BANGLUONG (
+    manv char(4) NOT NULL PRIMARY KEY,
+    hoten VARCHAR(50) NOT NULL,
+    diachi VARCHAR(50) NOT NULL,
+    madv CHAR(2) NOT NULL REFERENCES DMDV(madv),
+    hsluong NUMERIC(2,1),
+    ngaycong INT NOT NULL
+);
+
+INSERT INTO DMDV (madv, tendv, diachi) VALUES ('01', 'Cua hang so 01', '50 Hung Vuong');
+INSERT INTO DMDV (madv, tendv, diachi) VALUES ('02', 'Cua hang so 02', '15 CMT8');
+INSERT INTO DMDV (madv, tendv, diachi) VALUES ('03', 'Cong ty ABC', '40 Doan Tran NGhiep');
+INSERT INTO DMDV (madv, tendv, diachi) VALUES ('04', 'Xi Nghiep 204', 'Dong An - Thuan An');
+INSERT INTO DMDV (madv, tendv, diachi) VALUES ('05', 'Xi Nghiep Gom', 'Minh Tam - TXTDM');
+

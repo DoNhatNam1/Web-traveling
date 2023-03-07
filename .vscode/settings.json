@@ -9,6 +9,16 @@
             "database": "webhomework",
             "username": "postgres",
             "password": "hatienphuvt321"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "csdl",
+            "database": "csdl",
+            "username": "postgres",
+            "password": "hatienphuvt321"
         }
     ]
 }
