@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from "react";
-import { PackagesContext } from '../../context/PackagesContext'
-import backendUrl from '../../apis/backend-url';
+import { PackagesContext } from '../../../../context/PackagesContext'
+import backendUrl from '../../../../apis/backend-url';
 import { useNavigate } from "react-router-dom";
-import './routes/AdminPage/adminPage.css'
+import '../ADMIN_ONLY/AdminPage/adminPage.css'
 
 const PackageList = (props) => {
     const { packages, setPackages } = useContext(PackagesContext);

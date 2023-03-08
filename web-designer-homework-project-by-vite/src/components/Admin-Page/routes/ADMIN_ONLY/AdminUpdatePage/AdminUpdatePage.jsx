@@ -1,5 +1,5 @@
 import React from "react";
-import UpdatePackage from '../../UpdatePackage'
+import UpdatePackage from '../../PackagesInfo/UpdatePackage'
 import './adminupdatepage.css'
 
 const AdminUpdatePage = () => {

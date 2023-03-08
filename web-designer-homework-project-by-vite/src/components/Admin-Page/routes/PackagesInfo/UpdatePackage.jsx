@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-import backendUrl from '../../apis/backend-url';
-import { PackagesContext } from '../../context/PackagesContext'
-import '../Admin-Page/routes/AdminUpdatePage/adminupdatepage.css'
+import backendUrl from '../../../../apis/backend-url';
+import { PackagesContext } from '../../../../context/PackagesContext'
+import '../ADMIN_ONLY/AdminUpdatePage/adminupdatepage.css'
 
 const UpdatePackage = (props) => {
     const {id} = useParams();

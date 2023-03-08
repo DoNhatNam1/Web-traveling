@@ -1,7 +1,7 @@
 import React from 'react'
-import AddPackage from '../../AddPackage'
-import PackageList from '../../PackageList'
-import Header from '../../Header'
+import AddPackage from '../../PackagesInfo/AddPackage'
+import PackageList from '../../PackagesInfo/PackageList'
+import Header from '../../PackagesInfo/Header'
 import './adminPage.css'
 
 const AdminPage = () => {

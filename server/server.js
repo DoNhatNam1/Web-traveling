@@ -51,7 +51,6 @@ app.get("/admin/info/:makhach", async (req, res) => {
     console.log(dangky);
     res.status(200).json({
       status: "success",
-
       data: {
         khachs: khach.rows[0],
         dangkys: dangky.rows[0],

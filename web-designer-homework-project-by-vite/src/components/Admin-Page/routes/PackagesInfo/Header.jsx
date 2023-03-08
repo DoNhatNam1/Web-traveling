@@ -1,5 +1,5 @@
 import React from 'react'
-import './routes/AdminPage/adminPage.css'
+import '../ADMIN_ONLY/AdminPage/adminPage.css'
 
 const Header = () => {
   return (

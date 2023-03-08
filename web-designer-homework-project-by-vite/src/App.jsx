@@ -4,8 +4,8 @@ import './index.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ProtectAdminLogin from './components/Admin-Page/ProtectAdminLogin';
 import { PackagesContextProvider } from './context/PackagesContext';
-import AdminPage from './components/Admin-Page/routes/AdminPage/AdminPage';
-import AdminUpdatePage from './components/Admin-Page/routes/AdminUpdatePage/AdminUpdatePage';
+import AdminPage from './components/Admin-Page/routes/ADMIN_ONLY/AdminPage/AdminPage';
+import AdminUpdatePage from './components/Admin-Page/routes/ADMIN_ONLY/AdminUpdatePage/AdminUpdatePage';
 import FormPage from './components/FormPage/FormPage';
 
 const App = () => {

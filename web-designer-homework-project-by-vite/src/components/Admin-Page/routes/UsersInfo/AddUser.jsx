@@ -3,7 +3,7 @@ import backendUrl from '../../apis/backend-url'
 import { PackagesContext } from '../../context/PackagesContext';
 import './routes/AdminPage/adminPage.css'
 
-const AddPackage = () => {
+const AddUser = () => {
     const { addPackages } = useContext(PackagesContext);
   const [tendd, setTenDD] = useState("");
   const [tentinhthanh, setTenTinhThanh] = useState("");
@@ -70,4 +70,4 @@ const handleSubmit = async () => {
   
 
 
-export default AddPackage
+export default AddUser
