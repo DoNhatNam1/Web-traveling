@@ -1,24 +1,30 @@
-import React,{useState, useContext, useEffect} from 'react'
-import backendUrl from '../../apis/backend-url'
-import { PackagesContext } from '../../context/PackagesContext';
-import './routes/AdminPage/adminPage.css'
+import React,{useState, useContext} from 'react'
+import backendUrl from '../../../../apis/backend-url'
+import { UsersContext } from '../../../../context/UsersContext';
+import '../../routes/ADMIN_ONLY/AdminPage/adminPage.css'
 
 const AddUser = () => {
-    const { addPackages } = useContext(PackagesContext);
-  const [tendd, setTenDD] = useState("");
-  const [tentinhthanh, setTenTinhThanh] = useState("");
-  const [Dongia, setDonGia] = useState("");
+    const { addUsers } = useContext( UsersContext );
+  const [tenkhach, setTenKhach] = useState("");
+  const [dienthoai, setDienThoai] = useState();
+  const [diachi, setDiaChi] = useState("");
+  const [machuyen, setMaChuyen] = useState("");
+  const [ngaydky, setNgaydky] = useState("");
+  const [stdtra, setStdtra] = useState("");
 
 const handleSubmit = async () => {
     // e.preventDefault();
     try {
       const response = await backendUrl.post("/", {
-        tendd,
-        tentinhthanh,
-        dongia: Dongia
+        tenkhach,
+        dienthoai,
+        diachi,
+        machuyen,
+        ngaydky,
+        stdtra
       });
       console.log(response.data.data);
-      addPackages(response.data.data.packages);
+      addUsers(response.data.data.khachs);
     } catch (err) {
       console.log(err);
     }
@@ -29,29 +35,56 @@ const handleSubmit = async () => {
         <div className="formrow">
           <div className="col">
             <input
-              value={tendd}
-              onChange={(e) => setTenDD(e.target.value)}
+              value={tenkhach}
+              onChange={(e) => setTenKhach(e.target.value)}
               type="text"
               className="formcontrol"
-              placeholder="Ten_DD...."
+              placeholder="Ten Khach...."
             />
           </div>
           <div className="col">
             <input
-              value={tentinhthanh}
-              onChange={(e) => setTenTinhThanh(e.target.value)}
+              value={dienthoai}
+              onChange={(e) => setDienThoai(e.target.value)}
               className="formcontrol"
               type="text"
-              placeholder="Ten_Tinh_Thanh...."
+              placeholder="Dien Thoai...."
             />
           </div>
           <div className="col">
             <input
-              value={Dongia}
-              onChange={(e) => setDonGia(e.target.value)}
+              value={diachi}
+              onChange={(e) => setDiaChi(e.target.value)}
               className="formcontrol"
               type="text"
-              placeholder="Don_Gia...."
+              placeholder="Dia Chi...."
+            />
+          </div>
+          <div className="col">
+            <input
+              value={machuyen}
+              onChange={(e) => setMaChuyen(e.target.value)}
+              className="formcontrol"
+              type="text"
+              placeholder="Ma Chuyen...."
+            />
+          </div>
+          <div className="col">
+            <input
+              value={ngaydky}
+              onChange={(e) => setNgaydky(e.target.value)}
+              className="formcontrol"
+              type="text"
+              placeholder="Ngay Dang Ky...."
+            />
+          </div>
+          <div className="col">
+            <input
+              value={stdtra}
+              onChange={(e) => setStdtra(e.target.value)}
+              className="formcontrol"
+              type="text"
+              placeholder="So Tien Da Tra...."
             />
           </div>
 

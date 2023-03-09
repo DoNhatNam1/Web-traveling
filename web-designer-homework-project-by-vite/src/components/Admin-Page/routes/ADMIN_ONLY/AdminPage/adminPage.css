@@ -8,9 +8,6 @@
   margin: 0.3rem;
   padding-left: 5px;
 }
-.finder-container .list-group {
-  margin: auto;
-}
 .finder-container .list-group table, .finder-container .list-group th, .finder-container .list-group td {
   border: 2px solid black;
   border-collapse: collapse;

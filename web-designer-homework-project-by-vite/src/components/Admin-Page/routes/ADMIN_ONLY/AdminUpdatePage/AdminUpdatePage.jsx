@@ -1,12 +1,12 @@
 import React from "react";
-import UpdatePackage from '../../PackagesInfo/UpdatePackage'
+import UpdateUser from '../../UsersInfo/UpdateUser'
 import './adminupdatepage.css'
 
 const AdminUpdatePage = () => {
   return (
     <div className="admin-contain">
-      <h1 className="text-center">Update Package</h1>
-      <UpdatePackage />
+      <h1 className="text-center">Update Users</h1>
+      <UpdateUser />
     </div>
   );
 };

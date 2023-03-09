@@ -8,7 +8,7 @@ INSERT INTO tdangky (machuyen, makhach, ngaydky, stdtra) VALUES
 ((SELECT machuyen FROM tchuyendulich Where machuyen = 1),(SELECT makhach FROM khach_key), '5/6/2023', '$1200');
 
 -- @block
-SELECT * FROM tdangky ;
+SELECT * FROM tkhach ;
 
 -- @block
 INSERT INTO ttuyen (tentuyen, songay, ghichu) VALUES ('Tuyen ABC', 5, 'But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.')

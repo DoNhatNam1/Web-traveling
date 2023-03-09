@@ -14,20 +14,17 @@ app.use(express.json());
 // Get All tkhach for all users
 app.get("/admin/info", async (req, res) => {
   try {
-    const khachs = await db.query("select * from tkhach");
+    const khachs = await db.query("select tk.*, tdk.machuyen, TO_CHAR(ngaydky, 'dd/Mon/yyyy'), tdk.stdtra from tkhach tk, tdangky tdk WHERE tk.makhach = tdk.makhach");
     // console.log(khachs);
 
-    const dangkys = await db.query("select * from tdangky");
-    // console.log(dangkys);
+
 
 
     res.status(200).json({
       status: "success",
       results_for_khach: khachs.rows.length,
-      results_for_dang_ky: dangkys.rows.length,
       data: {
         khachs: khachs.rows,
-        dangkys: dangkys.rows,
       },
     });
   } catch (err) {
@@ -40,20 +37,15 @@ app.get("/admin/info", async (req, res) => {
 app.get("/admin/info/:makhach", async (req, res) => {
   
   try {
-    const khach = await db.query("select DISTINCT * from tkhach where makhach = $1", 
+    const khach = await db.query("select * from tkhach tk, tdangky tdk where tk.makhach = $1 and tdk.makhach = $1", 
     [req.params.makhach]
     );
     console.log(khach);
 
-    const dangky = await db.query("SELECT tdk.machuyen, TO_CHAR(ngaydky, 'dd/Mon/yyyy'), tdk.stdtra FROM tdangky tdk INNER JOIN tkhach tk ON tdk.makhach = tk.makhach WHERE tk.makhach = $1", 
-    [req.params.makhach]
-    );
-    console.log(dangky);
     res.status(200).json({
       status: "success",
       data: {
         khachs: khach.rows[0],
-        dangkys: dangky.rows[0],
       },
     });
   } catch (err) {
@@ -115,12 +107,12 @@ app.put("/admin/info/:makhach", async (req, res) => {
       "UPDATE tkhach SET tenkhach = $1, dienthoai = $2, diachi = $3 where makhach = $4 returning *",
       [req.body.tenkhach, req.body.dienthoai, req.body.diachi, req.params.makhach]
     );
-
+    console.log(khach);
     const dangky = await db.query(
       "UPDATE tdangky SET machuyen = $1, ngaydky = $2, stdtra = $3 where makhach = $4 returning *",
       [req.body.machuyen, req.body.ngaydky, req.body.stdtra, req.params.makhach]
     );
-    
+    console.log(dangky);
     res.status(200).json({
       status: "success",
       data: {
@@ -131,7 +123,7 @@ app.put("/admin/info/:makhach", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  console.log(req.params.id);
+  console.log(req.params.makhach);
   console.log(req.body);
 });
 
@@ -140,9 +132,13 @@ app.put("/admin/info/:makhach", async (req, res) => {
 
 app.delete("/admin/info/:makhach", async (req, res) => {
   try {
-    const results = db.query("DELETE FROM tkhach, tdangky where makhach = $1", [
-      req.params.id,
-    ]);
+    const result = db.query("DELETE FROM tdangky where makhach = $1", [
+      req.params.makhach]
+      );
+    const results = db.query("DELETE FROM tkhach where makhach = $1", [
+      req.params.makhach]
+      );
+      
     res.status(204).json({
       status: "success",
     });

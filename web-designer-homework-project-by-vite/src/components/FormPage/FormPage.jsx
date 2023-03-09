@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import  { Form, Input, Select, Button, Row, Col, Space, DatePicker, message} from 'antd';
 import './formpage.css'
-import { PackagesContext } from '../../context/PackagesContext'
+import { UsersContext } from '../../context/UsersContext'
 import { useNavigate } from 'react-router-dom'
-import backendUrl from '../../apis/backend-url'
+import backendUrls from '../../apis/backend-2-url'
 import Navbar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
 
@@ -24,20 +24,24 @@ const FormPage = () => {
   const [tenkhach, setTenKhach] = useState("")
 const [dienthoai, setDienThoai] = useState()
 const [diachi, setDiaChi] = useState("")
-const [machuyen, setMaChuyen] = useState()
-const [ngaydky, setNgayDangKy] = useState("")
-const { addPackages } = useContext(PackagesContext);
+// const [machuyen, setMaChuyen] = useState()
+const [ngaydky, setNgayDangKy] = useState()
+const [stdtra, setStdtra] = useState("")
+const { addUsers } = useContext( UsersContext );
 // let navigate = useNavigate();
 const handleSubmit = async () => {
   // e.preventDefault();
   try {
-    const response = await backendUrl.post("/", {
-      tendd,
-      tentinhthanh,
-      dongia: Dongia
+    const response = await backendUrls.post("/", {
+      tenkhach,
+      dienthoai,
+      diachi,
+      // machuyen,
+      ngaydky,
+      stdtra,
     });
     console.log(response.data.data);
-    addPackages(response.data.data.packages);
+    addUsers(response.data.data.khachs);
   } catch (err) {
     console.log(err);
   }
@@ -56,7 +60,7 @@ const handleSubmit = async () => {
       <div className='cpContainer'>
         <h1 data-aos="fade-up" className='sec-title-form'> PLEASE ENTER YOUR INFORMATION</h1>
 
-        <Form onFinish={onFinish} form={form} className='inputGp'>
+        <Form className='inputGp'>
 
         <Form.Item className="input-item">
           <h3 className='third-title-form'><span>Personal Information</span></h3>
@@ -67,6 +71,15 @@ const handleSubmit = async () => {
               onChange={(e) => setTenKhach(e.target.value)}
               type="text"
       placeholder='Name...'
+      />
+      </Col>
+    </Row>
+    <Row>
+      <Col span={24}><Input 
+      value={stdtra}
+              onChange={(e) => setStdtra(e.target.value)}
+              type="text"
+      placeholder='Money EXAMPLE: $100...'
       />
       </Col>
     </Row>
@@ -105,7 +118,7 @@ const handleSubmit = async () => {
             <Row>
       <Col span={24}><Select
             // value={machuyen}
-              onChange={(e) => setMaChuyen(e.target.value)}
+              // onChange={(e) => setMaChuyen(e.target.value)}
               type="text"
     showSearch
     className='Selected-packages'
@@ -144,7 +157,7 @@ const handleSubmit = async () => {
   /></Col>
     </Row>
     <Row>
-      <Col span={24}><DatePicker 
+      <Col span={24}><Input 
             value={ngaydky}
               onChange={(e) => setNgayDangKy(e.target.value)}
               type="text"
