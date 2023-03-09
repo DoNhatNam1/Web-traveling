@@ -2,6 +2,8 @@ import React,{useState, useContext} from 'react'
 import backendUrl from '../../../../apis/backend-url'
 import { UsersContext } from '../../../../context/UsersContext';
 import '../../routes/ADMIN_ONLY/AdminPage/adminPage.css'
+import Header from '../../routes/PackagesInfo/Header'
+
 
 const AddUser = () => {
     const { addUsers } = useContext( UsersContext );
@@ -30,6 +32,8 @@ const handleSubmit = async () => {
     }
 };
   return (
+    <>
+    <Header />
     <div className="mb-4">
       <form action="">
         <div className="formrow">
@@ -98,6 +102,7 @@ const handleSubmit = async () => {
         </div>
       </form>
     </div>
+    </>
   );
 };
   

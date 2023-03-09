@@ -4,10 +4,16 @@ import './adminupdatepage.css'
 
 const AdminUpdatePage = () => {
   return (
-    <div className="admin-contain">
+    <>
+    <AdminNavBar />
+    <section>
+    <div className="admin-container">
       <h1 className="text-center">Update Users</h1>
       <UpdateUser />
     </div>
+    </section>
+    <AdminFooter />
+    </>
   );
 };
 
