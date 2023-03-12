@@ -108,7 +108,7 @@ const UpdateUser = (props) => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="btn btnprimary"
+          className="btn"
         >
           Submit
         </button>

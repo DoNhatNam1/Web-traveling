@@ -2,10 +2,10 @@
 SELECT * FROM tchuyendulich, tdiadiemthamquan, ttuyen, tkhach, tdangky;
 
 -- @block
-WITH khach_key AS 
-(INSERT INTO tkhach (tenkhach, dienthoai, diachi) VALUES ('Nguyen Nhat Minh', 355355355, 'Chung cu Cho Binh Thach') RETURNING makhach)
-INSERT INTO tdangky (machuyen, makhach, ngaydky, stdtra) VALUES
-((SELECT machuyen FROM tchuyendulich Where machuyen = 1),(SELECT makhach FROM khach_key), '5/6/2023', '$1200');
+-- WITH khach_key AS 
+-- (INSERT INTO tkhach (tenkhach, dienthoai, diachi) VALUES ('Nguyen Nhat Minh', 355355355, 'Chung cu Cho Binh Thach') RETURNING makhach)
+-- INSERT INTO tdangky (machuyen, makhach, ngaydky, stdtra) VALUES
+-- ((SELECT machuyen FROM tchuyendulich Where machuyen = 1),(SELECT makhach FROM khach_key), '5/6/2023', '$1200');
 
 -- @block
 SELECT * FROM tkhach ;

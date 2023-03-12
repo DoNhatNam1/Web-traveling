@@ -24,9 +24,7 @@
   height: -moz-max-content;
   height: max-content;
   padding: 6rem 0rem 20rem;
-  display: flex;
   row-gap: 3rem;
-  flex-direction: column;
   align-items: center;
   justify-items: center;
   margin: auto;
@@ -42,7 +40,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  row-gap: 10px;
+  gap: 1rem;
   border-radius: 10px;
   align-items: center;
   background: var(--cardBG);
@@ -94,11 +92,10 @@
 .createPostPage .cpContainer .inputGp Button {
   width: auto;
   height: auto;
-  margin: 1rem;
+  margin: 0.4rem;
 }
 .createPostPage .cpContainer .inputGp Button .btn {
   text-align: center;
-  margin: 5px;
   font-size: 14px;
   font-weight: 500;
   padding-bottom: 1rem;

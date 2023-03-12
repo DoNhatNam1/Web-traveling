@@ -57,10 +57,10 @@ const handleSubmit = async () => {
     <Navbar />
     {/* {contextHolder} */}
     <section className='createPostPage'>
-      <div className='cpContainer'>
+      <div className='cpContainer grid'>
         <h1 data-aos="fade-up" className='sec-title-form'> PLEASE ENTER YOUR INFORMATION</h1>
 
-        <Form className='inputGp'>
+        <Form className='inputGp grid'>
 
         <Form.Item className="input-item">
           <h3 className='third-title-form'><span>Personal Information</span></h3>
@@ -166,7 +166,7 @@ const handleSubmit = async () => {
       </Col>
     </Row>
  </Form.Item> 
-        <Space>
+        <Space className='btn-gp flex'>
         <Button 
          onClick={handleSubmit} htmlType='submit' type='primary' className='btn'>BOOK</Button>
           <Button className='btn'>RESET FORM</Button>

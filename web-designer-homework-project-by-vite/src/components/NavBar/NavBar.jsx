@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './navbar.css'
 import { SiYourtraveldottv } from 'react-icons/si'
 import { AiFillCloseCircle } from 'react-icons/ai'

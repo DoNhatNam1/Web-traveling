@@ -7,7 +7,7 @@ import AdminFooter from '../../Admin-Footer/Admin-Footer'
 
 const AdminPage = () => {
   return (
-    <>
+    <div className='main grid'>
     <AdminNavBar />
     <section className='main-container'>
     <div className='finder-container grid'>
@@ -16,7 +16,7 @@ const AdminPage = () => {
     </div>
     </section>
     <AdminFooter />
-    </>
+    </div>
   )
 }
 

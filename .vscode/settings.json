@@ -19,6 +19,21 @@
             "database": "csdl",
             "username": "postgres",
             "password": "hatienphuvt321"
+        },
+        {
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 1433,
+            "driver": "MSSQL",
+            "name": "mssql",
+            "database": "webhomework",
+            "username": "sa",
+            "password": "hatienphuvt321"
         }
     ]
 }

@@ -32,11 +32,13 @@ const handleSubmit = async () => {
     }
 };
   return (
-    <>
+    <section>
+    <div className="mb-4 flex">
     <Header />
-    <div className="mb-4">
       <form action="">
-        <div className="formrow">
+        <div className="formrow-container flex">
+
+        <div className="formrow-item grid">
           <div className="col">
             <input
               value={tenkhach}
@@ -64,6 +66,11 @@ const handleSubmit = async () => {
               placeholder="Dia Chi...."
             />
           </div>
+
+          </div>
+
+          <div className="formrow-item grid">
+
           <div className="col">
             <input
               value={machuyen}
@@ -91,18 +98,26 @@ const handleSubmit = async () => {
               placeholder="So Tien Da Tra...."
             />
           </div>
+          </div> 
 
+          <div className="formrow-item grid">
+          <div className="col">
           <button
             onClick={handleSubmit}
             type="submit"
-            className="btn btnprimary"
+            className="btn"
           >
-            Add
+            ADD MORE
           </button>
-        </div>
-      </form>
+          </div>
+          </div>
+
+          </div>
+          </form>
+    
+ 
     </div>
-    </>
+    </section>
   );
 };
   
