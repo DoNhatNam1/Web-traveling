@@ -18,7 +18,7 @@ const App = () => {
  <>
   <Router>
     <Routes>
-      <Route exact path="/" element={<ClientPage />} />
+      <Route exact path="/Web-designer-code/" element={<ClientPage />} />
       <Route path="/admin/user" element={<AdminPageUser />} />
       <Route path="/admin/PackageEdit" element={<AdminPagePackage />} />
       <Route path="/admin/user/add" element={<AddUser />} />
