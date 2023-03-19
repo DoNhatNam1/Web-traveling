@@ -1,0 +1,90 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+}
+
+.main-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.main-container .finder-container {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 8rem 1.5rem 3rem;
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: auto;
+  z-index: 100;
+}
+.main-container .finder-container .mb-4 {
+  justify-content: space-around;
+}
+.main-container .finder-container .mb-4 h1 {
+  color: var(--textColor);
+  font-size: 30px;
+  text-decoration: underline;
+  text-decoration-color: var(--SecondaryColor);
+}
+.main-container .finder-container .mb-4 .formrow-container .formrow-item {
+  gap: 0.5rem;
+  height: 80%;
+}
+.main-container .finder-container .mb-4 .formrow-container .formrow-item .col {
+  margin: 0.5rem;
+}
+.main-container .finder-container .mb-4 .formrow-container .formrow-item .col input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+.main-container .finder-container .btn-add-new-user {
+  display: flex;
+  justify-content: end;
+  transform: translate(-8rem, 2.1rem);
+}
+.main-container .finder-container .list-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main-container .finder-container .list-group table, .main-container .finder-container .list-group th, .main-container .finder-container .list-group td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 0.8rem;
+  background-color: #c9e9e9;
+}
+.main-container .finder-container .list-group table .sub, .main-container .finder-container .list-group th .sub, .main-container .finder-container .list-group td .sub {
+  border: none;
+  border-top: 2px solid black;
+}
+.main-container .finder-container .list-group .table-container {
+  margin-top: 2rem;
+  padding: 0.7rem;
+  width: 80%;
+}
+.main-container .finder-container .list-group .table-container .bg-primary .titles {
+  text-align: center;
+}
+.main-container .finder-container .list-group .table-container .pg {
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}/*# sourceMappingURL=adminPage.css.map */

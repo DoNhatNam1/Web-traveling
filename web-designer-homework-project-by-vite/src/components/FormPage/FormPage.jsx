@@ -41,7 +41,7 @@ const handleSubmit = async () => {
       stdtra,
     });
     console.log(response.data.data);
-    addUsers(response.data.data.khachs);
+    addUsers(response.data.data.user);
   } catch (err) {
     console.log(err);
   }

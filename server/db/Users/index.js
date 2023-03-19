@@ -7,7 +7,7 @@ const sql = require('mssql');
 const getUsers = async () =>{
     try {
         let pool = await sql.connect(config.sql);
-        const sqlQueries = await utils.loadSqlQueries('users');
+        const sqlQueries = await utils.loadSqlQueries('Users');
         const list = await pool.request().query(sqlQueries.userslist);
         return list.recordset;
     } catch (error) {
@@ -18,7 +18,7 @@ const getUsers = async () =>{
 const getById = async (makhach) => {
     try {
         let pool = await sql.connect(config.sql);
-        const sqlQueries = await utils.loadSqlQueries('users');
+        const sqlQueries = await utils.loadSqlQueries('Users');
         const oneUser = await pool.request()
                                     .input('makhach', sql.Int, makhach)
                                     .query(sqlQueries.userbyId);
@@ -50,7 +50,7 @@ const createUser = async (userData) =>{
 const updateUser = async (makhach, userData) =>{
     try {
         let pool = await sql.connect(config.sql);
-        const sqlQueries = await utils.loadSqlQueries('users');
+        const sqlQueries = await utils.loadSqlQueries('Users');
         const update = await pool.request()
                                 .input("makhach", sql.Int, makhach)
                                 .input("TenKhach", sql.NVarChar(50), userData.TenKhach)
@@ -70,7 +70,7 @@ const updateUser = async (makhach, userData) =>{
 const deleteUser = async (makhach) =>{
     try {
         let pool = await sql.connect(config.sql);
-        const sqlQueries = await utils.loadSqlQueries('users'); 
+        const sqlQueries = await utils.loadSqlQueries('Users'); 
         const deleted = await pool.request()
                                     .input('makhach', sql.Int, makhach)
                                     .query(sqlQueries.deleteUser);

@@ -49,7 +49,7 @@ const Navbar = () => {
 
 
                     <button className='btn'>
-                        <Link to='/bookform' >BOOK NOW</Link>
+                        <Link to='/bookform/user' >BOOK NOW</Link>
                     </button>
                 </ul>
 

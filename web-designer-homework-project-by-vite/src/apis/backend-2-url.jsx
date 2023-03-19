@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:3006/bookform",
+  baseURL: "http://localhost:8080/bookform/user",
 });

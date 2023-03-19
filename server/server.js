@@ -11,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/admin', usersRoutes.routes);
+app.use('/bookform', usersRoutes.routes);
 
 
 app.listen(config.port, () => console.log('server is up and listening on http://localhost:' + config.port));

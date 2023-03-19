@@ -20,12 +20,14 @@ const getUsers = async (req, res, next) => {
 
 const getUser = async (req, res, next) => {
     try {
-        const makhach = req.params.id;
-        const oneUser = await userData.getById(makhach);
+        const id = req.params.id;
+        console.log("🚀 ~ file: userController.js:24 ~ getUser ~ id:", id)
+        const user = await userData.getById(id);
+        console.log("🚀 ~ file: userController.js:26 ~ getUser ~ oneUser:", user)
         res.status(200).json({
             status: "OK",
             data: {
-              user: oneUser
+              user: user,
             },
           });
         
@@ -51,9 +53,10 @@ const addUser = async (req, res, next) => {
 
 const updateUser = async (req, res, next) =>{
 try {
-    const makhach = req.params.id;
+    const id = req.params.id;
     const data = req.body;
-    const updated = await userData.updateUser(makhach, data);
+    const updated = await userData.updateUser(id, data);
+    
     res.status(200).json({
         status: "OK",
         data: {

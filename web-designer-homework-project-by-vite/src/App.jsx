@@ -4,9 +4,12 @@ import './index.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ProtectAdminLogin from './components/Admin-Page/ProtectAdminLogin';
 import { UsersContextProvider } from './context/UsersContext';
-import AdminPage from './components/Admin-Page/routes/ADMIN_ONLY/AdminPage/AdminPage';
-import AdminUpdatePage from './components/Admin-Page/routes/ADMIN_ONLY/AdminUpdatePage/AdminUpdatePage';
+import AdminPageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminPageUser/AdminPageUser';
+import AdminUpdatePageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminUpdatePageUser/AdminUpdatePageUser';
+import AdminPagePackage from './components/Admin-Page/routes/ADMIN_ONLY/AdminPagePackage/AdminPagePackage';
 import FormPage from './components/FormPage/FormPage';
+import AddUser from './components/Admin-Page/routes/UsersInfo/AddUser';
+import ADdPackageTuyen from './components/Admin-Page/routes/PackagesTuyenInfo/AddPackageTuyen';
 
 const App = () => {
  
@@ -16,10 +19,13 @@ const App = () => {
   <Router>
     <Routes>
       <Route exact path="/" element={<ClientPage />} />
-      <Route path="/admin/info" element={<AdminPage />} />
-      <Route path="/admin/info/:id/update" element={< AdminUpdatePage />} />
+      <Route path="/admin/user" element={<AdminPageUser />} />
+      <Route path="/admin/PackageEdit" element={<AdminPagePackage />} />
+      <Route path="/admin/user/add" element={<AddUser />} />
+      <Route path="/admin/PackageEdit/add" element={<ADdPackageTuyen />} />
+      <Route path="/admin/user/:id/update" element={< AdminUpdatePageUser />} />
       {/* <Route path="/admin/:id" element={< AdminPackageDetailPage />} /> */}
-      <Route path="/bookform" element={<FormPage />} />
+      <Route path="/bookform/user" element={<FormPage />} />
 
     </Routes>
   </Router>

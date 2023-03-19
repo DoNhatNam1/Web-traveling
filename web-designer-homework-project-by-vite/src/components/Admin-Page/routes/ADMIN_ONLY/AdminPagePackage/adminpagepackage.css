@@ -54,6 +54,11 @@
   border-radius: 5px;
   border: none;
 }
+.main-container .finder-container .btn-add-new-user {
+  display: flex;
+  justify-content: end;
+  transform: translate(-8rem, 2.1rem);
+}
 .main-container .finder-container .list-group {
   display: flex;
   gap: 0.5rem;
@@ -82,4 +87,4 @@
   text-align: center;
   margin: 0.5rem;
   padding: 0.5rem;
-}/*# sourceMappingURL=adminPage.css.map */
+}/*# sourceMappingURL=adminpagepackage.css.map */

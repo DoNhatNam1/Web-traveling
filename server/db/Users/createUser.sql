@@ -29,4 +29,5 @@ values (
     @stdtra
 )
 
+
 SELECT * FROM [dbo].[tdangky], [dbo].[tkhach] WHERE [tkhach].[Makhach] = @makhach and [tdangky].[Makhach] = @makhach

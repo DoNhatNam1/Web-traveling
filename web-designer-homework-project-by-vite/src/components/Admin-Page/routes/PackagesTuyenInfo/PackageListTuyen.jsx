@@ -47,11 +47,9 @@ const UserList = (props) => {
       <table className="table-container">
         <thead>
           <tr className="bg-primary">
-            <th className="titles" scope="col">Ten Khach</th>
-            <th className="titles" scope="col">Dien Thoai</th>
-            <th className="titles" scope="col">Dia Chi</th>
-            <th className="titles" scope="col">Ngay Dang Ky</th>
-            <th className="titles" scope="col">So Tien Da Tra</th>
+            <th className="titles" scope="col">Ten Tuyen</th>
+            <th className="titles" scope="col">So Ngay</th>
+            <th className="titles" scope="col">Ghi Chu</th>
             {/* <th scope="col">Edit</th>
             <th scope="col">Delete</th> */}
           </tr>
@@ -64,8 +62,6 @@ const UserList = (props) => {
                   <td className="pg">{users.TenKhach}</td>
                   <td className="pg">{users.DienThoai}</td>
                   <td className="pg">{users.DiaChi}</td>
-                  <td className="pg">{users.NgayDKy}</td>
-                  <td className="pg">{users.STDtra}</td>
                   <td className="sub">
                     <button
                       onClick={(e) => handleUpdate(e, users.MaKhach)}

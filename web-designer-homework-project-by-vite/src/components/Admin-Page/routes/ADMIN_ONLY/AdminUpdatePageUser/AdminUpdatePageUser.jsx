@@ -4,7 +4,7 @@ import AdminNavBar from "../../Admin-NavBar/Admin-NavBar";
 import AdminFooter from "../../Admin-Footer/Admin-Footer";
 import './adminupdatepage.css'
 
-const AdminUpdatePage = () => {
+const AdminUpdatePageUser = () => {
   return (
     <>
     <AdminNavBar />
@@ -15,4 +15,4 @@ const AdminUpdatePage = () => {
   );
 };
 
-export default AdminUpdatePage;
+export default AdminUpdatePageUser;

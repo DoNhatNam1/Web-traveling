@@ -33,7 +33,8 @@
         justify-content: center;
         margin: auto;
         z-index: 100;
-    
+
+        
         .mb-4{
             justify-content: space-around;
 
@@ -64,6 +65,11 @@
         }
         }
         
+        .btn-add-new-user{
+            display: flex;
+            justify-content: end;
+            transform: translate(-8rem, 2.1rem);
+        }
     
         .list-group{
             display: flex;

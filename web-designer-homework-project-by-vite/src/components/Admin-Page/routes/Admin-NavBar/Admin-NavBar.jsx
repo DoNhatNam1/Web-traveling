@@ -23,10 +23,10 @@ const AdminNavBar = () => {
     <ul className="navLists flex">
                     
                     <li className="navItem">
-                        <Link to ="/admin/info/PackageEdit" className="navLink">Package Edit</Link>
+                        <Link to ="/admin/PackageEdit" className="navLink">Package Edit</Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/admin/info" className="navLink">User Edit</Link>
+                        <Link to="/admin/user" className="navLink">User Edit</Link>
                     </li>
                     </ul>
                     </div>

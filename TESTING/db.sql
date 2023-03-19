@@ -399,3 +399,85 @@ INSERT INTO DMDV (madv, tendv, diachi) VALUES ('03', 'Cong ty ABC', '40 Doan Tra
 INSERT INTO DMDV (madv, tendv, diachi) VALUES ('04', 'Xi Nghiep 204', 'Dong An - Thuan An');
 INSERT INTO DMDV (madv, tendv, diachi) VALUES ('05', 'Xi Nghiep Gom', 'Minh Tam - TXTDM');
 
+CREATE TABLE KHACHHANG (
+    makh char(4) CONSTRAINT pk_khachhang PRIMARY KEY NOT NULL,
+    tenkhach varchar(15) NOT NULL,
+    diachi varchar(50) NOT NULL
+)
+
+CREATE TABLE SUDUNG (
+    masd char(2) CONSTRAINT pk_sudung PRIMARY KEY NOT NULL,
+    loaisd varchar(15) NOT NULL,
+    dongia NUMERIC(5,0) NOT NULL
+)
+
+CREATE TABLE CHITIET (
+    masd char(2) NOT NULL REFERENCES SUDUNG(masd),
+    makh char(4) NOT NULL REFERENCES KHACHHANG(makh),
+    sokw int NOT NULL,
+    thanhtien NUMERIC(8,0)
+)
+
+
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH01', 'THANH', '12 YERSIN PHU CUONG');
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH02', 'BINH', '04 BACH DANG PHU CUONG');
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH03', 'HAO', '12 DT743 PHU HOA');
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH04', 'TIEN', '04 DAI LO BINH DUONG');
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH05', 'HOA', '03 DT743 PHU HOA');
+INSERT INTO khachhang (makh, tenkhach, diachi) VALUES ('KH06', 'VAN', '12 CMT8 PHU CUONG');
+
+
+INSERT INTO sudung (masd, loaisd, dongia) VALUES ('KD', 'KINH DOANH', 750);
+INSERT INTO sudung (masd, loaisd, dongia) VALUES ('SH', 'SINH HOAT', 500);
+INSERT INTO sudung (masd, loaisd, dongia) VALUES ('SX', 'SAN XUAT', 100);
+
+
+
+
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('KD', 'KH01', '100');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('KD', 'KH02', '200');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('KD', 'KH03', '50');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('KD', 'KH04', '300');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SH', 'KH05', '150');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SH', 'KH01', '50');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SH', 'KH02', '350');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SH', 'KH03', '400');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SH', 'KH04', '200');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SX', 'KH05', '150');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SX', 'KH01', '220');
+INSERT INTO CHITIET (masd, makh, sokw) VALUES ('SX', 'KH02', '300');
+
+-- Cau 2.3
+
+SELECT * FROM khachhang where makh not in (SELECT makh from chitiet )
+
+-- Cau 2.5
+SELECT count(*) as NumberOfKD FROM khachhang WHERE makh in (SELECT makh from chitiet where masd in ( SELECT masd from sudung where loaisd = 'KINH DOANH'))
+
+-- Cau 2.1
+
+UPDATE
+    chitiet
+SET
+    chitiet.thanhtien = 
+        c.sokw * sd.dongia
+FROM 
+    chitiet c
+    INNER JOIN sudung sd
+        ON c.masd = sd.masd and c.sokw = (
+            CASE WHEN c.sokw <= 100 THEN c.sokw
+            WHEN c.sokw > 100 AND c.sokw <=200 THEN c.sokw * 1.5 
+            WHEN c.sokw > 200 THEN c.sokw * 2
+            END
+            )
+
+
+
+
+
+
+
+
+
+
+
