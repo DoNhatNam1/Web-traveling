@@ -1,14 +1,14 @@
 import React,{useState, useContext} from 'react'
 import backendUrl from '../../../../apis/backend-url'
 import  { Form, Input, Select, Button, Row, Col, Space, DatePicker, message} from 'antd';
-import { UsersContext } from '../../../../context/UsersContext';
+import { Context } from '../../../../context/Context';
 import '../../../FormPage/formpage.css'
 import { useNavigate } from 'react-router-dom';
 
 
 
 const AddUser = () => {
-    const { addUsers } = useContext( UsersContext );
+    const { addUsers } = useContext( Context );
     let navigate = useNavigate();
   const [TenKhach, setTenKhach] = useState("");
   const [DienThoai, setDienThoai] = useState("");

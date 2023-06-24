@@ -1,0 +1,49 @@
+.main {
+  width: 100%;
+}
+.main .contact-container {
+  margin: 4rem 6rem;
+  text-align: start;
+}
+.main .contact-container .contact-title {
+  background-color: rgb(230, 230, 230);
+  z-index: -2;
+}
+.main .contact-container .contact-title h1 {
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 40px;
+}
+.main .contact-container .contact-title h5 {
+  text-align: center;
+  color: grey;
+}
+.main .contact-container .contact-title .contact-line {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgb(180, 180, 180);
+}
+.main .contact-container .contact-group .contact-p {
+  font-size: 14px;
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+}
+.main .contact-container .contact-group .contact-line {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
+.main .contact-container .contact-group .contact-second-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.main .contact-container .Thank-you-about {
+  padding: 3rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@media screen and (max-width: 850px) {
+  .contact-container {
+    margin: 4rem 2rem;
+  }
+}/*# sourceMappingURL=aboutpagecontent.css.map */

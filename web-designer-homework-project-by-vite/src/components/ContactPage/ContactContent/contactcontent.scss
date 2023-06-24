@@ -1,0 +1,81 @@
+$primary-color: #007bff;
+$border-color: none;
+$bg-color: hsl(0, 0%, 93%);
+$textColor: hsl(240, 4%, 36%);
+$shadow-color: rgba(0, 0, 0, 0.2);
+$select-padding: 10px;
+$select-radius: 4px;
+$select-hover-bg: hsl(0, 0%, 93%);
+$select-options-width: 240px;
+$select-options-padding: $select-padding;
+$select-options-border: 1px solid $border-color;
+$select-options-bg: $bg-color;
+$select-options-shadow: 0 2px 4px $shadow-color;
+$select-options-item-padding: $select-padding;
+$branch-name-color: #2775ea;
+$branch-phone-color: #888;
+
+// Thẻ select và các tùy chọn mini
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select {
+  padding: $select-padding;
+  border: $select-options-border;
+  border-radius: $select-radius;
+  cursor: pointer;
+  color: $textColor;
+  font-size: .9rem;
+    font-weight: 600;
+
+  &:hover {
+    background-color: $select-hover-bg;
+  }
+}
+
+.select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: $select-options-width;
+  padding: $select-options-padding;
+  border: $select-options-border;
+  border-top: none;
+  border-radius: $select-radius;
+  background-color: $select-options-bg;
+  box-shadow: $select-options-shadow;
+  display: none;
+  z-index: 1;
+
+  .select-options-item {
+    padding: $select-options-item-padding;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $select-hover-bg;
+    }
+
+    .branch {
+      margin-bottom: 10px;
+
+      &__name {
+        color: $branch-name-color;
+        font-weight: bold;
+        margin-bottom: 5px;
+        
+      }
+
+      &__phone {
+        color: $branch-phone-color;
+        font-weight: 400;
+        font-size: smaller;
+      }
+    }
+  }
+}
+
+.select-container:hover .select-options {
+  display: block;
+}

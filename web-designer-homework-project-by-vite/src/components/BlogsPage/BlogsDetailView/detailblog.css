@@ -1,0 +1,24 @@
+.main {
+  width: 100%;
+}
+.main .blog-container {
+  margin: 4rem 6rem;
+  text-align: start;
+}
+.main .blog-container h1 {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.main .blog-container h4 {
+  padding-bottom: 1rem;
+  color: olivedrab;
+}
+.main .blog-container p {
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 850px) {
+  .blog-container {
+    margin: 4rem 2rem;
+  }
+}/*# sourceMappingURL=detailblog.css.map */

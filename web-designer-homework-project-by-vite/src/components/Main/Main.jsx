@@ -1,141 +1,124 @@
 import React, {useEffect} from 'react'
 import './main.css'
-import img from '../../assets/img(1).jpg'
-import img2 from '../../assets/img2.jpg'
-import img3 from '../../assets/img3.jpg'
-import img4 from '../../assets/img4.jpg'
-import img5 from '../../assets/img5.jpg'
-import img6 from '../../assets/img6.jpg'
-import img7 from '../../assets/img7.jpg'
-import img8 from '../../assets/img8.jpg'
-import img9 from '../../assets/img9.jpg'
+import imgDaLat from '../../assets/travelpic/imgDaLat.jpg'
+import imgHaNoi from '../../assets/travelpic/imgHaNoi.jpg'
+import imgHLCB from '../../assets/travelpic/imgHL-CB.jpg'
+import imgHue from '../../assets/travelpic/imgHue.jpg'
+import imgMeKong from '../../assets/travelpic/imgMeKong.jpg'
+import imgNhaTrang from '../../assets/travelpic/imgNhaTrang.jpg'
+import imgPhanThiet from '../../assets/travelpic/imgPhanThiet.jpg'
+import imgPhuQuoc from '../../assets/travelpic/imgPhuQuoc.jpg'
+import imgSapa from '../../assets/travelpic/imgSapa.jpg'
 import {HiOutlineLocationMarker, HiOutlineClipboardCheck} from 'react-icons/hi'
+import { FiArrowRight } from "react-icons/fi";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 const Data = [
   {
   MaChuyen: 1,
-  imgSrc: img,
-  PhuongTien: 'Xe giuong nam 50 cho',
-  TenHDVien: 'MR dep trai',
-  DonGia: '$800',
-  tenDD: 'Vinh Ha Long',
-  TenTinhThanh: 'Quang Ninh',
-  TenTuyen: 'TUYEN ABC',
-  SoNgay: 5,
-  GhiChu: 'But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.'
+  imgSrc: imgDaLat,
+  DonGia: 500000,
+  tenDD: 'Vườn Hoa Đà Lạt',
+  DiemDen: 'Đà Lạt',
+  DiemKhoiHanh: 'Hà Nội',
+  NgayKhoiHanh: '19-06-2023',
+  GhiChu: 'Là thành phố nổi tiếng với khí hậu mát mẻ và nhiều quán cà phê lãng mạn và có phong cảnh thiên nhiên đẹp thiết tha, với các bông hoa đẹp mê ly với từng khách du lịch ghé qua.'
 },
 
 {
   MaChuyen: 2,
-  imgSrc: img2,
-  PhuongTien: 'xe giuong nam 25 cho',
-  TenHDVien: "MRS xinh dep",
-  DonGia: '$420',
-  tenDD: 'Pho di bo',
-  TenTinhThanh: 'Ha Noi',
-  TenTuyen: 'TUYEN XYZ',
-  SoNgay: 8,
-  GhiChu: 'Hoan Kiem Lake Walking Street is bustling at weekends (collected photos) To serve people who come to visit and have fun in the pedestrian street, the Hanoi People Committee has established 78 parking spots.'
+  imgSrc: imgHaNoi,
+  DonGia: 1000000,
+  tenDD: 'Động Phong Nha',
+  DiemDen: 'Hà Nội',
+  DiemKhoiHanh: 'HCM',
+  NgayKhoiHanh: '20-06-2023',
+  GhiChu: 'Là khu vực đá vôi đặc biệt với hệ thống hang động, đá sỏi và đá quặng, với các nhũ đá vôi tồn tại hàng nghìn năm càng làm tô thêm vẻ đẹp em dịu của chốn linh thiêng này...'
 
 },
 
 {
   MaChuyen: 3,
-  imgSrc: img3,
-  PhuongTien: 'xe Hoa mai',
-  TenHDVien: "MR khoe manh",
-  DonGia: '$200',
-  tenDD: 'Bach Dinh',
-  TenTinhThanh: 'Vung Tau',
-  TenTuyen: 'TUYEN CHEAPER',
-  SoNgay: 2,
-  GhiChu: 'Bach Dinh relic site in Vung Tau. Bach Dinh is named after the French name Villa Blanche which means white villa, located on the big mountainside of Vung Tau city.'
+  imgSrc: imgHLCB,
+  DonGia: 1500000,
+  tenDD: 'Vịnh Hạ Long',
+  DiemDen: 'Quảng Ninh',
+  DiemKhoiHanh: 'Hà Nội',
+  NgayKhoiHanh: '21-06-2023',
+  GhiChu: 'Là một trong những danh thắng nổi tiếng của Việt Nam với hệ thống đảo đá ngầm được hình thành hàng triệu năm. Sử dụng các từ khóa như: Vịnh Hạ Long, đảo đá ngầm, du lịch Halong, để tối ưu hóa từ khóa và thu hút khách hàng quan tâm...'
 
 },
 
 {
   MaChuyen: 4,
-  imgSrc: img4,
-  PhuongTien: 'may bay',
-  TenHDVien: "Jack The Ripper",
-  DonGia: '$960',
-  tenDD: 'Ho Guom',
-  TenTinhThanh: 'Ha Noi',
-  TenTuyen: 'TUYEN DANGEROUSLY',
-  SoNgay: 4,
-  GhiChu: 'Sword Lake (also known as Hoan Kiem Lake) is the heart of Hanoi. This is not only a place for people to relax, but also associated with the people of the capital in many historical aspects.'
+  imgSrc: imgHue,
+  DonGia: 2000000,
+  tenDD: 'Cầu Bàn Tay Vàng',
+  DiemDen: 'Đà Nẵng',
+  DiemKhoiHanh: 'HCM',
+  NgayKhoiHanh: '22-06-2023',
+  GhiChu: 'Là thành phố cố đô nổi tiếng với các di tích lịch sử và kiến trúc cổ kính của các thời đại triều đình ngày xưa...'
 
 },
 
 {
   MaChuyen: 5,
-  imgSrc: img5,
-  PhuongTien: 'tau ngam',
-  TenHDVien: "Aquaman",
-  DonGia: '$840',
-  tenDD: 'Bai Dau',
-  TenTinhThanh: 'Vung Tau',
-  TenTuyen: 'TUYEN DIVING',
-  SoNgay: 2,
-  GhiChu: 'Coming to Vung Tau Strawberry Beach, it is not only finding in the coastal nature here a peaceful, gentle sea to relax and rest but also attractive with religious architectural works.'
+  imgSrc: imgMeKong,
+  DonGia: 2500000,
+  tenDD: 'Miền Tây',
+  DiemDen: 'Mê Kong',
+  DiemKhoiHanh: 'HCM',
+  NgayKhoiHanh: '22-06-2023',
+  GhiChu: 'Là một vùng đồng bằng sông Cửu Long ở miền Nam Việt Nam nổi tiếng với các con sông, kênh rạch, vườn trái cây, đặc sản ẩm thực, cùng với các khu du lịch nổi tiếng như Cồn Phụng, Chợ Nổi Cái Bè, Vườn Trái Cây Cái Bè...'
 
 },
 
 {
   MaChuyen: 6,
-  imgSrc: img6,
-  PhuongTien: 'du thuyen',
-  TenHDVien: "MR Rich Man",
-  DonGia: '$1000',
-  tenDD: 'Alaska',
-  TenTinhThanh: 'USA',
-  TenTuyen: 'TUYEN HAVEMONEY',
-  SoNgay: 9,
-  GhiChu: 'From scenic flights and glacier walks to white water rafting trips, Alaska offers endless possibilities for adventure. Explore the snow-capped mountains in Denali National Park, watch the whimsical Northern Lights dance above Fairbanks, or visit Point Woronz of to see incredible wildlife such as bald eagles, moose, and perhaps even beluga whales. After your first visit to the Last Frontier, you ll find yourself happily returning again and again.'
+  imgSrc: imgNhaTrang,
+  DonGia: 5500000,
+  tenDD: 'Vinpearl Land',
+  DiemDen: 'Nha Trang',
+  DiemKhoiHanh: 'HCM',
+  NgayKhoiHanh: '23-06-2023',
+  GhiChu: 'Là một trong những điểm đến du lịch hàng đầu ở Việt Nam với các bãi biển đẹp như Bãi Dài, Bãi Tranh, Bãi Tắm Nha Trang, Hòn Một, các đảo và các khu du lịch khác như Tháp Bà Ponagar, Chùa Long Sơn, Nhà thờ Đá, Vinpearl Land...'
 
 },
 
 {
   MaChuyen: 7,
-  imgSrc: img7,
-  PhuongTien: 'xe limo',
-  TenHDVien: "MR dep trai",
-  DonGia: '$970',
-  tenDD: 'East Coast',
-  TenTinhThanh: 'USA',
-  TenTuyen: 'TUYEN SUPERELAX',
-  SoNgay: 5,
-  GhiChu: 'Explore Florida warm sandy beaches, the bustling streets of New York City, and taste iconic local cuisine everywhere from Maine to North Carolina. Discover everything the East Coast of America has to offer on one of our 100 tours. We can help you find the best time to visit the East Coast or West Coast, or even both.'
+  imgSrc: imgPhanThiet,
+  DonGia: 6500000,
+  tenDD: 'Mũi Né',
+  DiemDen: 'Phan Thiết',
+  DiemKhoiHanh: 'Hâ Nội',
+  NgayKhoiHanh: '24-06-2023',
+  GhiChu: 'Là một trong những bãi biển nổi tiếng tại Việt Nam với cát trắng, nắng vàng và các hoạt động vui chơi giải trí...'
 
 },
 
 {
   MaChuyen: 8,
-  imgSrc: img8,
-  PhuongTien: 'xe Tour',
-  TenHDVien: "MR xau trai",
-  DonGia: '$340',
-  tenDD: 'Hawaii',
-  TenTinhThanh: 'USA',
-  TenTuyen: 'TUYEN NORMAL',
-  SoNgay: 3,
-  GhiChu: 'Crystal clear swells create idyllic surfing spots, helicopter rides offer sky-high views of active volcanoes, and crisp-green jungles contrast with some of the best beaches in the world. Its not hard to see why these islands are deservedly named the Paradise of the Pacific. Whether you relax in a 5-star resort in Honolulu or head underwater in search of marine life in Maui, there no shortage of amazing adventures in Hawaii.'
+  imgSrc: imgPhuQuoc,
+  DonGia: 9000000,
+  tenDD: 'Đảo Xanh Phú Quốc ',
+  DiemDen: 'Phú Quốc',
+  DiemKhoiHanh: 'HCM',
+  NgayKhoiHanh: '25-06-2023',
+  GhiChu: 'Là đảo lớn tại miền Nam Việt Nam với bờ biển trong xanh, cát trắng và rừng ngập mặn đầy màu sắc làm cho vẻ đẹp nơi đây rất cuốn hút, đặc biệt là với những khách du lịch lần đầu mới tới trong và ngoài nước...'
 
 },
 
 {
   MaChuyen: 9,
-  imgSrc: img9,
-  PhuongTien: 'may bay',
-  TenHDVien: "MR Hittle",
-  DonGia: '$1140',
-  tenDD: 'California',
-  TenTinhThanh: 'USA',
-  TenTuyen: 'TUYEN FOR SUPERRICHES',
-  SoNgay: 2,
-  GhiChu: 'From the illuminated sunset strip of Las Vegas and the cactus-filled plains of Joshua Tree to the bright red bridge that dominates San Francisco and California Disneyland where dreams come true. The West Coast of the USA is a paradise offering a range of adventures for the whole family no matter what time of year. Embark on a cruise to Alaska or opt for some time out in Yosemite, the possibilities are endless on a vacation America West Coast.'
+  imgSrc: imgSapa,
+  DonGia: 1000000,
+  tenDD: 'SaPa',
+  DiemDen: 'Lào Cai',
+  DiemKhoiHanh: 'Hà Nội',
+  NgayKhoiHanh: '26-06-2023',
+  GhiChu: 'Là một vùng núi cao nổi tiếng với phong cảnh đẹp và các bản làng dân tộc đặc trưng, bạn sẽ cảm thấy rất thích thú với bản chất lượng thiện của họ, đồng thời nơi đây các trò chơi thú vị của dân địa phương để khách có cảm giác vui vẻ khó quên bên gia đình và người thân...'
 
 },
 ]
@@ -147,18 +130,28 @@ const Main = () => {
       duration:2000
     })
   }, [])
+
+  const formatter = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  });
+  
+
   
   return (
     <section className = 'main container section'>
       <div className="secTitle">
         <h3 data-aos="fade-right" className="title">
-        Most visited destinations
+        Phổ biến nhất:
         </h3>
       </div>
 
       <div className="secContent grid">
         {
-        Data.map(({MaChuyen, imgSrc, PhuongTien, TenHDVien, DonGia, tenDD, TenTinhThanh, TenTuyen, SoNgay, GhiChu}) =>{
+        Data.map(({MaChuyen, imgSrc, DonGia, tenDD, DiemDen, DiemKhoiHanh, NgayKhoiHanh, GhiChu}) =>{
+
+          const formattedValue = formatter.format(DonGia);
           return(
             <div key={MaChuyen} data-aos="fade-up" className="singleDestination">
               <div className="imageDiv">
@@ -171,15 +164,20 @@ const Main = () => {
                 </h4>
                 <span className="continent flex">
                   <HiOutlineLocationMarker className='icon' />
-                  <span className="name">{TenTinhThanh}</span>
+                  <span className="name">{DiemKhoiHanh}</span>
+                  <FiArrowRight className='icon'/>
+                  <HiOutlineLocationMarker className='icon' />
+                  <span className="name">{DiemDen}</span>
                 </span>
 
                 <div className="fees flex">
-                  <div className="TenTuyen">
-                    <span>{TenTuyen}<small>+1</small></span>
+
+                  <div className="NgayKhoiHanh">
+                    <span> Ngày đi: {NgayKhoiHanh}</span>
                   </div>
+
                   <div className="price">
-                    <h5>{DonGia}</h5>
+                    <h5>{formattedValue}</h5>
                   </div>
                 </div>
 

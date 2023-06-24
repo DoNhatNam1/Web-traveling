@@ -44,13 +44,10 @@ const Footer = () => {
             </div>
 
             <div data-aos="fade-up" className="footerParagraph">
-            Lorem Ipsum is simply dummy text of the printing 
-            and typesetting industry. Lorem Ipsum has been the 
-            industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled 
-            it to make a type specimen book. It has survived not only five 
-            centuries, but also the leap into electronic typesetting, remaining 
-            essentially unchanged.
+            Chúng tôi cam kết mang đến cho bạn những trải nghiệm du lịch tuyệt vời nhất. 
+            Với đội ngũ nhân viên giàu kinh nghiệm, chúng tôi luôn sẵn lòng tư vấn và hỗ trợ 
+            bạn trong suốt hành trình khám phá thế giới. Hãy liên hệ với chúng tôi ngay và trải nghiệm
+            những chuyến đi đáng nhớ nhất trong cuộc đời!
             </div>
 
             <div data-aos="fade-up" className="footerSocials">
@@ -70,23 +67,15 @@ const Footer = () => {
               </span>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />Services
+                <FiChevronRight className="icon" />Dịch vụ
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />Insurance
+                <FiChevronRight className="icon" />Đội ngũ chuyên gia
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />Agency
-              </li>
-
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />Tourism
-              </li>
-
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />Payment
+                <FiChevronRight className="icon" />Mô Hình Kinh Doanh
               </li>
 
             </div>
@@ -98,23 +87,15 @@ const Footer = () => {
               </span>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />Bookings
+                <FiChevronRight className="icon" />Đối tác
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />Rentcars
+                <FiChevronRight className="icon" />Thuê xe
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />HostelWorld
-              </li>
-
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />Trivago
-              </li>
-
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />TriAdvisor
+                <FiChevronRight className="icon" />Lữ quán
               </li>
 
             </div>
@@ -126,24 +107,17 @@ const Footer = () => {
               </span>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />USA
+                <FiChevronRight className="icon" />Những chuyến đi giá rẻ
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />VietNam
+                <FiChevronRight className="icon" />Tour trọn gói
               </li>
 
               <li className="footerList flex">
-                <FiChevronRight className="icon" />London
+                <FiChevronRight className="icon" />Chỗ còn trống
               </li>
 
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />Korea
-              </li>
-
-              <li className="footerList flex">
-                <FiChevronRight className="icon" />Philippine
-              </li>
 
             </div>
           </div>

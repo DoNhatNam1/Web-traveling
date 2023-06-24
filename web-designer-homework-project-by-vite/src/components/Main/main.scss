@@ -113,20 +113,25 @@
                         align-items: center;
                         justify-content: center;
 
-                        small{
-                            text-align: center;
-                            background: var(--gradientColor);
-                            border-radius: 1rem;
-                            color: var(--whiteColor);
-                            padding: 1px 10px;
-                            font-size: 10px;
-                        }
+                        // small{
+                        //     text-align: center;
+                        //     background: var(--gradientColor);
+                        //     border-radius: 1rem;
+                        //     color: var(--whiteColor);
+                        //     padding: 1px 10px;
+                        //     font-size: 10px;
+                        // }
+                    }
+
+                    .NgayKhoiHanh{
+                        font-size: 14px;
                     }
 
                     .price{
-                        font-size: 2rem;
+                        font-size: 1.5rem;
                         color: var(--blackColor);
                     }
+                    
                 }
 
                 .Ghichu{
@@ -153,7 +158,6 @@
 }
 
 // Media Queries
-
 @media screen and (min-width: 500px) {
     .title{
         font-size: 1.5rem;
@@ -179,4 +183,34 @@
             height: auto;
         }
     }
+}
+
+@media screen and (max-width: 360px){
+    .secContent{
+
+        .singleDestination{
+
+            .cardInfo{
+
+                .fees{
+                    gap: 1rem;
+
+                    .NgayKhoiHanh{
+                        
+                        span{
+                            font-size: 12px;
+                        }
+                    }
+            
+                    .price{
+                        
+                        h5{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

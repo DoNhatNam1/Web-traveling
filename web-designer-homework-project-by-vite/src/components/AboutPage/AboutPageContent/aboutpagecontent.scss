@@ -1,0 +1,65 @@
+.main{
+    width: 100%;
+
+.contact-container{
+    margin: 4rem 6rem;
+    text-align: start;
+
+
+    .contact-title{
+        background-color: rgb(230, 230, 230);
+        z-index: -2;
+        h1 {
+            padding-bottom: 1rem;
+            text-align: center;
+            font-size: 40px;
+        }
+        h5 {
+            text-align: center;
+            color: grey;
+        }
+
+        .contact-line{
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgb(180, 180, 180);
+           
+        }
+    }
+  
+
+.contact-group {
+
+        .contact-p {
+            font-size: 14px;
+            padding-left: .5rem;
+            padding-top: 1rem;
+
+        }
+        .contact-line{
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgb(180, 180, 180);
+        }
+        .contact-second-title{
+            font-size: 18px;
+            font-weight: 600;
+            padding-top: 1rem;
+        }
+    
+
+    
+}
+
+.Thank-you-about {
+    padding: 3rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+}
+}
+
+@media screen and (max-width: 850px){
+    .contact-container{
+        margin: 4rem 2rem;
+    }
+}

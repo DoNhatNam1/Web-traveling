@@ -14,14 +14,12 @@
 
 
 .createPostPage{
+    color: var(--textColor);
+    background: var(--whiteColorDeam);
     width: 100%;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    margin: auto;
 
     .cpContainer{
-        width: 80%;
+        width: 100%;
         height: max-content;
         padding: 6rem 0rem 20rem;
         row-gap: 3rem;
@@ -37,97 +35,287 @@
             height: auto;
             font-size: 25px;
         }
-
-        .inputGp{
-            width: 100%;
-            height: 100%;
-            display: grid;
-            gap: 1rem;
-            border-radius: 10px;
-            align-items: center;
-            background: var(--cardBG);
-            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
-            overflow: hidden;
         
-          
-                .input-item{
-                    width: auto;
-                    height: auto;
-                    margin: 1rem;
-                    padding: .2rem; 
+        .form-and-picture{
+            align-items: stretch;
+            color: var(--textColor);
+            background: var(--whiteColorDeam);
+            transform: translateX(4rem);
             
+            .form-group{
+                flex-direction: column;
+                justify-content: center;
 
-                    .third-title-form{
-                        width: auto;
-                        height: auto;
-                        margin: 0, 1rem;
-                        font-size: 20px;
-                    }
+                .inputGp{
+                    width: 100%;
+                    height: 100%;
+                    gap: 1rem;
+                    border-radius: 5px 0px 0px 5px;
+                    background: var(--cardBG);
+                    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+                    overflow: hidden;
+                
+                  
+                        .input-item{
+                            width: auto;
+                            height: auto;
+                            margin: 1rem;
+                            padding: .2rem; 
                     
-                    input{
-                        width: 50%;
-                        padding: .2rem;
-                        margin: .5rem;
-                        border-radius: 5px;
-                        font-size: 15px;
-                        box-sizing: border-box;
-                        outline: none;
-                    }
-
-
-                    .Selected-packages{
-                        width: 50%;
-                        margin: .5rem;
-                        border-radius: 10px;
-                        font-size: 16px;
-
-                    }
         
-
-                    .form-note{
-                        width: 50%;
-                        padding: 2px;
-                        margin: .5rem;
-                        border-radius: 5px;
-                        font-size: 15px;
-                        resize: none;
-                        box-sizing: border-box;
-                        border: 3px solid #ccc;
-                        outline: none;
-                    }
-
-                    .date-time{
-                        width: 50%;
-                        margin: .5rem;
-                    }
+                            .third-title-form{
+                                width: auto;
+                                height: auto;
+                                margin: 0, 1rem;
+                                font-size: 17px;
+                            }
+                            
+                            input{
+                                width: 80%;
+                                padding: .2rem;
+                                margin: .5rem;
+                                border-radius: 5px;
+                                font-size: 13px;
+                                box-sizing: border-box;
+                                outline: none;
+                            }
+        
+        
+                            .Selected-packages{
+                                width: 80%;
+                                margin: .5rem;
+                                border-radius: 10px;
+                                
+                                span{
+                                    font-size: 11px;
+                                    transform: translateX(-.2rem);
+                                }
+                                
+                                input{
+                                    transform: translate(-1rem, -.5rem);
+                                    font-size: 13px;
+                                }
+                            }
+                
+        
+                            .form-note{
+                                width: 80%;
+                                padding: 2px;
+                                margin: .5rem;
+                                border-radius: 5px;
+                                font-size: 13px;
+                                resize: none;
+                                box-sizing: border-box;
+                                border: 3px solid #ccc;
+                                outline: none;
+                            }
+        
+                            .date-time{
+                                width: 80%;
+                                margin: .5rem;
+                                font-size: 13px;
+                            }
+                           
+                        }
+        
+                        Button{
+                            width: auto;
+                            height: auto;
+                            margin: .4rem;
+                            
+                            .btn{
+                                text-align: center;
+                                padding-bottom: 1rem;
                    
-                }
+                            }
 
-
-                Button{
-                    width: auto;
-                    height: auto;
-                    margin: .4rem;
-        
-                    .btn{
-                        text-align: center;
-                        font-size: 14px;
-                        font-weight: 500;
-                        padding-bottom: 1rem;
+                            span{
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: var(--whiteColorDeam);
+                            }
+                        }
+                }   
+            }
            
-                    }
-                    span{
-                        color: var(--whiteColorDeam);
+            .travel-pic{
+                height: auto;
+                padding-bottom: 2px;
+                overflow: hidden;
+
+                img{
+                    width: 80%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius:0px 5px 5px 0px;
+                    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+                }
+            }
+           
+        }
+        
+    }
+}
+
+// Media Queries
+
+@media screen and (max-width: 474px) {
+    .createPostPage{
+        .cpContainer{
+            .sec-title-form{
+                text-align: center;
+            }
+            .form-and-picture{
+                transform: none !important;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .createPostPage{
+
+        .cpContainer{
+
+            .sec-title-form{
+                font-size: 22px;
+            }
+
+            .form-and-picture{
+                transform: none !important;
+                .form-group{
+
+                    .inputGp{
+
+                        .input-item{
+                            .third-title-form{
+                                font-size: 15px;
+                            }
+                        }
+
+                        Button{
+                                          
+                            span{
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
+            }
         }
+    }
+}
 
+@media screen and (max-width: 769px) {
+    .createPostPage{
+        .cpContainer{
+            .form-and-picture{
+                transform: translateX(-.8rem);
+               
 
+                .form-group{
+                    flex-direction: none;
 
+                    .inputGp{
+                        width: 100%;
 
-            
-            
+                        .input-item{
+                            input{
+                                width: 90%;
+                            }
 
+                            .Selected-packages{
+                                width: 90%;
+                            }
 
+                            .date-time{
+                                width: 90%;
+                            }
+                        }
+
+                        Button{
+
+                            span{
+                                font-size: 12px;
+
+                            }
+                        }
+                    }
+                }
+                .travel-pic{
+                    display: none;
+                }
+            }
+        }
+    }
+   
+  
+}
+
+@media screen and (min-width: 769px) {
+    .createPostPage{
+
+        .cpContainer{
+
+            .form-and-picture{
+
+                .form-group{
+
+                    .inputGp{
+
+                        Button{
+                            width: 85%;
+                            height: 80%;
+                            padding-top: .3rem;
+                            
+                
+
+                            span{
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .createPostPage{
+
+        .cpContainer{
+
+            .form-and-picture{
+
+                .form-group{
+
+                    .inputGp{
+
+                        .input-item{
+
+                            .third-title-form{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .createPostPage{
+        max-width: 100%;
+
+        .cpContainer{
+
+            .sec-title-form{
+                margin-top: 1rem;
+            }
+        }
     }
 }

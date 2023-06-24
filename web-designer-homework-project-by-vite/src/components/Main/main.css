@@ -103,16 +103,11 @@
   align-items: center;
   justify-content: center;
 }
-.main .secContent .singleDestination .cardInfo .fees .TenTuyen small {
-  text-align: center;
-  background: var(--gradientColor);
-  border-radius: 1rem;
-  color: var(--whiteColor);
-  padding: 1px 10px;
-  font-size: 10px;
+.main .secContent .singleDestination .cardInfo .fees .NgayKhoiHanh {
+  font-size: 14px;
 }
 .main .secContent .singleDestination .cardInfo .fees .price {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--blackColor);
 }
 .main .secContent .singleDestination .cardInfo .Ghichu {
@@ -152,5 +147,16 @@
   }
   .secContent .singleDestination {
     height: auto;
+  }
+}
+@media screen and (max-width: 360px) {
+  .secContent .singleDestination .cardInfo .fees {
+    gap: 1rem;
+  }
+  .secContent .singleDestination .cardInfo .fees .NgayKhoiHanh span {
+    font-size: 12px;
+  }
+  .secContent .singleDestination .cardInfo .fees .price h5 {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=main.css.map */

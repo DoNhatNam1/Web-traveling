@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from "react";
-import { UsersContext } from '../../../../context/UsersContext'
+import { Context } from '../../../../context/Context'
 import backendUrl from '../../../../apis/backend-url';
 import { useNavigate } from "react-router-dom";
 import '../ADMIN_ONLY/AdminPageUser/adminPage.css'
 
 const UserList = (props) => {
-    const { users, setUsers } = useContext( UsersContext );
+    const { users, setUsers } = useContext( Context );
     let navigate = useNavigate();
     useEffect(() => {
       const fetchData = async () => {

@@ -34,6 +34,34 @@
             "database": "webhomework",
             "username": "sa",
             "password": "hatienphuvt321"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Local instance MySQL80",
+            "database": "web-travel",
+            "username": "root",
+            "askForPassword": true
+        },
+        {
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 1433,
+            "driver": "MSSQL",
+            "name": "web-project",
+            "database": "web_travel",
+            "username": "sa",
+            "password": "hatienphuvt321"
         }
     ]
 }

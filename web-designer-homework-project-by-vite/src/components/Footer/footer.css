@@ -198,6 +198,11 @@
     color: var(--whiteColor);
   }
 }
+@media screen and (max-width: 660px) {
+  .inputDiv button {
+    max-width: 50%;
+  }
+}
 @media screen and (min-width: 660px) {
   .footer .secContent .contactDiv {
     flex-direction: row;

@@ -63,7 +63,7 @@
         
             .homeTitle{
                 position: relative;
-                font-size: 1.8rem;
+                font-size: 3.8rem;
             }
             }
     
@@ -90,8 +90,10 @@
                     .total{
                         color: var(--textColor);
                         font-size: 18px;
+                        transform: translateY(-.3rem);
                     }
                 }
+
     
                 .input{
                     height: 40px;
@@ -121,32 +123,68 @@
                         background: blue;
                     }
                 }
-    
-                .searchOptions{
-                    position: absolute;
-                    background: var(--gradientColor);
-                    width: max-content;
-                    bottom:  -0.7rem;
-                    column-gap: .8rem;
-                    padding: 5px 1rem;
-                    border-radius: 3rem;
-                    left: 50%;
-                    transform: translate(-50%);
-                    justify-content: center;
-                    cursor: pointer;
-    
-                    &:hover{
-                        background: var(--PrimaryColor);
+
+                .arrow{
+                    height: 20px;
+                    padding: 0 1rem;
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    
+
+                    .switch-button{
+                        border: none;
+                        padding: 0;
+                        background: transparent;
+                        color: #0074d9;
+                        font-size: 1rem;
+                        text-decoration: underline;
+                        cursor: pointer;
+
+                        &:focus {
+                            outline: none;
+                        }
+                        .icon{
+                            font-size:  27px;
+                            color: var(--PrimaryColor) !important;
+                        }
                     }
-    
-                    .icon{
-                        font-size: 10px;
-                    }
-    
-                    span{
-                        font-size: 13px;
-                    }
+                    
+                   
                 }
+    
+                
+                .searchButton{
+                    position: absolute;
+                        background: var(--gradientColor);
+                        width: max-content;
+                        bottom:  -0.7rem;
+                        padding: 10px 1.5rem;
+                        border-radius: 3rem;
+                        left: 50%;
+                        transform: translate(-50%);
+                        justify-content: center;
+                        cursor: pointer;
+                        border: none;
+
+                        &:hover{
+                            background: var(--PrimaryColor);
+                        }
+
+                    .searchOptions{
+                        column-gap: .7rem;
+        
+                        .icon{
+                            color: white;
+                            font-size: 13px;
+                        }
+
+                       
+                        span{
+                            font-size: 13px;
+                        }                                  
+            }                
+                }
+                           
             }
     
             .homeFooterIcons{
@@ -166,6 +204,32 @@
     }
 }
 
+// Media Queries
+@media  screen and (max-width: 510px){
+    .home{
+        .homeContent{
+
+            .textDiv{
+            
+                .smallText{
+                    font-size: 12px;
+                }
+            
+                .homeTitle{
+                    font-size: 1.6rem !important;
+                }
+
+                }
+
+            .cardDiv{
+
+                .arrow{
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 500px) {
     .home{
@@ -195,33 +259,61 @@
 
             .cardDiv{
                 grid-template-columns: repeat(2, 1fr);
+
+                .arrow{
+                    margin-top: 1rem;
+                }
+
             }
         }
     }
     
 }
 
-
 @media screen and (min-width: 660px) {
     .home{
         .homeContent{
+
             .cardDiv{
                 padding: 2rem 1rem;
                 grid-template-columns: repeat(3, 1fr);
+
+                .arrow{
+                    margin-top: 1rem;
+                }
             }
         }
     }
 }
 
+@media screen and (max-width: 660px) {
+    .textDiv{
+
+            .homeTitle{
+                font-size: 1.8rem !important;
+            }
+      
+    }
+}
+
 @media screen and (min-width: 940px) {
     .home{
-        height: 80vh;
+
+        // height: 80vh;
+
+        .homeContent {
+           .cardDiv{
+            .arrow{
+                margin-top: 1rem;
+            }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 1240px) {
     .home{
-        height: 95vh;
+        // height: 95vh;
 
         .homeContent{
             padding-left: 0;
@@ -233,10 +325,13 @@
                 .input{
                     margin-bottom: 1rem;
                 }
+                
+                .arrow{
+                    margin-top: 1rem;
+                }
 
                 .searchOptions{
                     bottom: -1rem;
-                    padding: 8px 1rem;
 
                     span{
                         font-size: 17px;

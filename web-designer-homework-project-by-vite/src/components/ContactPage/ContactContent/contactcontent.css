@@ -1,0 +1,56 @@
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select {
+  padding: 10px;
+  border: 1px solid none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: hsl(240, 4%, 36%);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.select:hover {
+  background-color: hsl(0, 0%, 93%);
+}
+
+.select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 240px;
+  padding: 10px;
+  border: 1px solid none;
+  border-top: none;
+  border-radius: 4px;
+  background-color: hsl(0, 0%, 93%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1;
+}
+.select-options .select-options-item {
+  padding: 10px;
+  cursor: pointer;
+}
+.select-options .select-options-item:hover {
+  background-color: hsl(0, 0%, 93%);
+}
+.select-options .select-options-item .branch {
+  margin-bottom: 10px;
+}
+.select-options .select-options-item .branch__name {
+  color: #2775ea;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.select-options .select-options-item .branch__phone {
+  color: #888;
+  font-weight: 400;
+  font-size: smaller;
+}
+
+.select-container:hover .select-options {
+  display: block;
+}/*# sourceMappingURL=contactcontent.css.map */
