@@ -15,12 +15,12 @@ const getPackages = async () =>{
     }
 }
 
-const getByIdPackage = async (Ma_chuyen) => {
+const getByIdPackage = async (MaChuyen) => {
     try {
         let pool = await sql.connect(config.sql);
         const sqlQueries = await utils.loadSqlQueries('Packages');
         const onePackage = await pool.request()
-                                    .input('Ma_chuyen', sql.Int, Ma_chuyen)
+                                    .input('MaChuyen', sql.Int, MaChuyen)
                                     .query(sqlQueries.packagebyId);
 
         return onePackage.recordset;
@@ -34,10 +34,13 @@ const createPackage = async (PackageData) =>{
         let pool = await sql.connect(config.sql);
         const sqlQueries = await utils.loadSqlQueries('Packages');
         const insertPackage = await pool.request()
-                                        .input("Diem_den", sql.NVarChar(255), PackageData.Diem_den)
-                                        .input("Diem_di", sql.NVARCHAR(255), PackageData.Diem_di)
-                                        .input("Ngay_khoi_hanh", sql.DateTime, PackageData.Ngay_khoi_hanh)
-                                        .input("ImageUrl", sql.NVarChar(1000), PackageData.ImageUrl)
+                                        .input("DiemKhoiHanh", sql.NVarChar(255), PackageData.DiemKhoiHanh)
+                                        .input("DiemDen", sql.NVARCHAR(255), PackageData.DiemDen)
+                                        .input("GhiChu", sql.NVARCHAR(1000), PackageData.GhiChu)
+                                        .input("tenDD", sql.NVARCHAR(1000), PackageData.tenDD)
+                                        .input("NgayKhoiHanh", sql.Date, PackageData.NgayKhoiHanh)
+                                        .input("DonGia", sql.Int, PackageData.DonGia)
+                                        .input("imgSrc", sql.NVarChar(1000), PackageData.imgSrc)
                                         .query(sqlQueries.createPackage);
         return insertPackage.recordset;
     } catch (error) {

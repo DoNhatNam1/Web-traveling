@@ -8,7 +8,7 @@ const getAllPackages = async (req, res, next) => {
         const packages = await packageData.getPackages();
         res.status(200).json({
             status: "OK",
-            data: {
+            datapackage: {
               packages: packages
             },
           });
@@ -26,8 +26,8 @@ const getAPackage = async (req, res, next) => {
         console.log("🚀 ~ file: packageController.js:26 ~ getAPackage ~ package:", Apackage)
         res.status(200).json({
             status: "OK",
-            data: {
-              package: Apackage,
+            datapackage: {
+              package: Apackage
             },
           });
         
@@ -38,11 +38,11 @@ const getAPackage = async (req, res, next) => {
 
 const addPackage = async (req, res, next) => {
     try {
-        const data = req.body;
-        const created = await packageData.createPackage(data);
+        const datapackage = req.body;
+        const created = await packageData.createPackage(datapackage);
         res.status(200).json({
             status: "OK",
-            data: {
+            datapackage: {
               package: created
             },
           });
