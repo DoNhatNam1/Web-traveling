@@ -6,6 +6,7 @@ export const ContextProvider = (props) => {
   const [users, setUsers] = useState([]);
   // const [selectedPackage, setSelectedPackage] = useState(null);
   const [packages, setPackages] = useState([]);
+  const [userAccounts, setUserAccounts] = useState([]);
 
     const [searchData, setSearchData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -17,21 +18,29 @@ export const ContextProvider = (props) => {
   const addPackages = (packages) => {
     setPackages([...packages, packages]);
   };
+
+  const addUserAccounts = (userAccounts) => {
+    setUserAccounts([...userAccounts, userAccounts]);
+  };
+  
   return (
     <Context.Provider
       value={{
         users,
-        setUsers,
-        addUsers,
         searchData,
-        setSearchData,
         isSearching,
-        setIsSearching,
         isSearchingLoading,
-        setIsSearchingLoading,
         packages,
+        userAccounts,
+        setUsers,
+        setSearchData,
+        setIsSearching,
+        setIsSearchingLoading,
         setPackages,
+        setUserAccounts,
+        addUsers,
         addPackages,
+        addUserAccounts,
         // selectedPackage,
         // setSelectedPackage,
       }}

@@ -34,6 +34,13 @@
   bottom: 5px;
   z-index: -1;
 }
+.main .secTitle-search-fail .title-search-fail {
+  text-align: center;
+  font-size: 30px;
+  color: var(--textColor);
+  margin: 1rem 0;
+  z-index: 2;
+}
 .main .secContent {
   justify-content: center;
   gap: 1.5rem;

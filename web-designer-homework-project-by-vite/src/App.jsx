@@ -16,6 +16,9 @@ import DetailBlogView from './components/BlogsPage/BlogsDetailView/DetailBlogVie
 import AboutPage from './components/AboutPage/AboutPage';
 import NewsListView from './components/NewsPage/NewsListView/NewsListView';
 import ProductPage from './components/ProductPage/ProductPage';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
  
@@ -36,6 +39,9 @@ const App = () => {
       <Route path="/news" element={<NewsListView />} />
       <Route path="/Blogs/:id" element={<DetailBlogView />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/AddProduct" element={<ProductPage />} />
 
     </Routes>

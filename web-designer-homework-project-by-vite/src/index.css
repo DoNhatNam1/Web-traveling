@@ -21,7 +21,18 @@
   --inputColor: rgb(239, 239, 239);
   --bodyColor: rgb(240, 240, 240);
   --cardBG: rgb(225, 225, 225);
+
+  /* Font ang Typography */
+  --biggestFontSize: 2.5rem;
+  --h2FontSize: 1.5rem;
+  --h3FOntSIze: 1rem;
+  --normalFontSize: .938rem;
+  --smallFontSize: .813rem;
+  --smallestFontSize: .75rem;
 }
+
+
+
 
 html{
     scroll-behavior: smooth;
@@ -84,6 +95,19 @@ input{
 }
 body{
   background: var(--bodyColor);
+}
+
+.message{
+  display: none;
+}
+
+.showMessage{
+  display: block;
+  padding: 10px;
+  color: var(--whiteColor);
+  background: rgb(255,0,0);
+  border-radius: 3px;
+  text-align: center;
 }
 
 /* MEDIA QUERIES */

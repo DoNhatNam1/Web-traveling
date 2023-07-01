@@ -38,9 +38,9 @@
   align-items: stretch;
   color: var(--textColor);
   background: var(--whiteColorDeam);
-  transform: translateX(4rem);
 }
 .createPostPage .cpContainer .form-and-picture .form-group {
+  width: 100%;
   flex-direction: column;
   justify-content: center;
 }
@@ -106,14 +106,15 @@
 .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button {
   width: auto;
   height: auto;
-  margin: 0.4rem;
+  margin: 1rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 10px;
 }
 .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button .btn {
-  text-align: center;
-  padding-bottom: 1rem;
+  text-align: center !important;
 }
 .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button span {
-  font-size: 13px;
+  font-size: 13px !important;
   font-weight: 500;
   color: var(--whiteColorDeam);
 }
@@ -123,7 +124,7 @@
   overflow: hidden;
 }
 .createPostPage .cpContainer .form-and-picture .travel-pic img {
-  width: 80%;
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -138,7 +139,15 @@
     text-align: center;
   }
   .createPostPage .cpContainer .form-and-picture {
-    transform: none !important;
+    width: 100% !important;
+    padding: 0 3rem;
+  }
+  .createPostPage .cpContainer .form-and-picture .form-group .inputGp .btn-gp {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .createPostPage .cpContainer .form-and-picture .form-group .inputGp .btn-gp button {
+    margin: 0.2rem !important;
   }
 }
 @media screen and (max-width: 600px) {
@@ -157,9 +166,11 @@
 }
 @media screen and (max-width: 769px) {
   .createPostPage .cpContainer .form-and-picture {
+    width: 60%;
     transform: translateX(-0.8rem);
   }
   .createPostPage .cpContainer .form-and-picture .form-group {
+    width: 100%;
     flex-direction: none;
   }
   .createPostPage .cpContainer .form-and-picture .form-group .inputGp {
@@ -174,6 +185,9 @@
   .createPostPage .cpContainer .form-and-picture .form-group .inputGp .input-item .date-time {
     width: 90%;
   }
+  .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button {
+    padding: 0.6rem 1.5rem;
+  }
   .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button span {
     font-size: 12px;
   }
@@ -183,7 +197,7 @@
 }
 @media screen and (min-width: 769px) {
   .createPostPage .cpContainer .form-and-picture .form-group .inputGp Button {
-    width: 85%;
+    width: 100%;
     height: 80%;
     padding-top: 0.3rem;
   }
