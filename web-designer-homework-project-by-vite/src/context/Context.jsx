@@ -11,6 +11,29 @@ export const ContextProvider = (props) => {
     const [searchData, setSearchData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isSearchingLoading, setIsSearchingLoading] = useState(false);
+  const [registerStatus, setRegisterStatus] = useState(false);
+  const [dashboardShowNLoginSuccess, setDashboardShowLoginSuccess] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    Boolean(localStorage.getItem('isLoggedIn'))
+  );
+  const [userData, setUserData] = useState(
+    JSON.parse(localStorage.getItem('userData'))
+  );
+
+  const login = (user) => {
+    setDashboardShowLoginSuccess(true);
+    setIsLoggedIn(true);
+    setUserData(user);
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userData', JSON.stringify(user));
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUserData(null);
+    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('userData');
+  };
 
   const addUsers = (users) => {
     setUsers([...users, users]);
@@ -32,15 +55,24 @@ export const ContextProvider = (props) => {
         isSearchingLoading,
         packages,
         userAccounts,
+        isLoggedIn,
+        userData,
+        registerStatus,
+        dashboardShowNLoginSuccess,
         setUsers,
         setSearchData,
         setIsSearching,
         setIsSearchingLoading,
         setPackages,
         setUserAccounts,
+        setIsLoggedIn,
+        setRegisterStatus,
+        setDashboardShowLoginSuccess,
         addUsers,
         addPackages,
         addUserAccounts,
+        login,
+        logout
         // selectedPackage,
         // setSelectedPackage,
       }}

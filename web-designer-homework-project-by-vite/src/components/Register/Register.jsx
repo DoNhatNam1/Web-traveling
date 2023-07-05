@@ -4,6 +4,8 @@ import './register.css'
 import video from '../../assets/video-rain.mp4'
 import logo from '../../assets/logo.jpg'
 import { Context } from '../../context/Context'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import userAccountRegisterUrl from '../../apis/user-account-register-url'
 import { FaUserShield } from 'react-icons/fa'
 import { BsFillShieldLockFill } from 'react-icons/bs'
@@ -14,23 +16,99 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [userName, setUserName] = useState("")
   const [password, setPassword] = useState("")
+  const [hasFetched, setHasFetched] = useState(false);
   const navigateTo = useNavigate()
 
-  const { addUserAccounts } = useContext( Context )
+  const { userAccounts, addUserAccounts, setRegisterStatus, setUserAccounts } = useContext( Context )
+
+  const fetchData = async () => {
+    try {
+      const response = await userAccountRegisterUrl.get("/")
+      console.log(response.data.datauseraccout);
+      setUserAccounts(response.data.datauseraccout.useraccouts);
+      setHasFetched(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  if (!hasFetched) {
+    fetchData();
+  }
 
   const createUser = async (e) => {
     e.preventDefault()
-    try {
-      const response = await userAccountRegisterUrl.post("/", {
-        Email: email,
-        UserName: userName,
-        Pass: password
+    if(email === '' || userName === '' || password === '') {
+     setTimeout(() => {
+      toast.error('Vui lòng nhập đầy đủ thông tin!', {
+        position: "bottom-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
-      console.log(response.data.datauseraccout);
-      addUserAccounts(response.data.datauseraccout.useraccout);
-      navigateTo('/login');
-    } catch (err) {
-      console.log(err);
+     }, 1000);
+      navigateTo('/register')
+    } else if(!email.endsWith('@gmail.com')) {
+      setTimeout(() => {
+        toast.error('Email không hợp lệ!', {
+          position: "bottom-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+       }, 1000);
+       navigateTo('/register')
+    } else if(userAccounts.some(account => account.UserName === userName)) {
+      setTimeout(() => {
+        toast.error('Tên đăng nhập đã được sử dụng. Vui lòng chọn tên đăng nhập khác!', {
+          position: "bottom-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+       }, 1000);
+      navigateTo('/register')
+    } else if (password.length < 10) {
+      setTimeout(() => {
+        toast.warn('Để nâng cao bảo mật, vui lòng nhập mật khẩu không dưới 10 ký tự!', {
+          position: "bottom-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+       }, 1000);
+      navigateTo('/register')
+    } else {
+
+      try {
+        const response = await userAccountRegisterUrl.post("/", {
+          Email: email,
+          UserName: userName,
+          Pass: password
+        });
+        console.log(response.data.datauseraccout);
+        addUserAccounts(response.data.datauseraccout.useraccout);
+        setRegisterStatus(true);
+        navigateTo('/login');
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
   return (
@@ -93,6 +171,7 @@ const Register = () => {
             </div>
 
         </div>
+        <ToastContainer />
     </div>
 
   )

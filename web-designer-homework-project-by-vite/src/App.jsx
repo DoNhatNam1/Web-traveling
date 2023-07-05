@@ -3,7 +3,7 @@ import ClientPage from './components/Client-page'
 import { storage } from "./FirebaseDatabase/firebase";
 import './index.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import ProtectAdminLogin from './components/Admin-Page/ProtectAdminLogin';
+// import PrivateRoute from './components/Admin-Page/PrivateRoute';
 import { ContextProvider } from './context/Context';
 import AdminPageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminPageUser/AdminPageUser';
 import AdminUpdatePageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminUpdatePageUser/AdminUpdatePageUser';
