@@ -3,7 +3,6 @@ import ClientPage from './components/Client-page'
 import { storage } from "./FirebaseDatabase/firebase";
 import './index.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import PrivateRoute from './components/Admin-Page/PrivateRoute';
 import { ContextProvider } from './context/Context';
 import AdminPageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminPageUser/AdminPageUser';
 import AdminUpdatePageUser from './components/Admin-Page/routes/ADMIN_ONLY/AdminUpdatePageUser/AdminUpdatePageUser';
@@ -18,7 +17,8 @@ import NewsListView from './components/NewsPage/NewsListView/NewsListView';
 import ProductPage from './components/ProductPage/ProductPage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import Dashboard from './components/Dashboard/Dashboard';
+import UserDashboard from './components/UserDashboard/UserMainDashboard/UserDashboard';
+import ProfileContainer from './components/UserDashboard/UserDashboardProfile/ProfileContain/ProfileContainer';
 
 const App = () => {
  
@@ -33,17 +33,16 @@ const App = () => {
       <Route path="/admin/user/add" element={<AddUser />} />
       <Route path="/admin/PackageEdit/add" element={<AddPackageTuyen />} />
       <Route path="/admin/user/:id/update" element={< AdminUpdatePageUser />} />
-      {/* <Route path="/admin/:id" element={< AdminPackageDetailPage />} /> */}
       <Route path="/bookform/user" element={<FormPage />} />
       <Route path="/Blogs" element={<BlogsListView />} />
       <Route path="/news" element={<NewsListView />} />
       <Route path="/Blogs/:id" element={<DetailBlogView />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/userdashboard" element={<UserDashboard />} />
       <Route path="/register" element={<Register />} />
       <Route path="/AddProduct" element={<ProductPage />} />
-
+      <Route path="/userdashboard/profile/info" element={<ProfileContainer />} />
     </Routes>
   </Router>
   </>

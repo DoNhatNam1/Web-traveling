@@ -1,6 +1,7 @@
 import React , { useState, useContext } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import './register.css'
+import bcrypt from 'bcryptjs';
 import video from '../../assets/video-rain.mp4'
 import logo from '../../assets/logo.jpg'
 import { Context } from '../../context/Context'
@@ -38,6 +39,8 @@ const Register = () => {
 
   const createUser = async (e) => {
     e.preventDefault()
+    const hashedUserName = bcrypt.hashSync(userName, 10);
+    const hashedPassword = bcrypt.hashSync(password, 10);
     if(email === '' || userName === '' || password === '') {
      setTimeout(() => {
       toast.error('Vui lòng nhập đầy đủ thông tin!', {
@@ -99,8 +102,8 @@ const Register = () => {
       try {
         const response = await userAccountRegisterUrl.post("/", {
           Email: email,
-          UserName: userName,
-          Pass: password
+          UserName: hashedUserName,
+          Pass: hashedPassword
         });
         console.log(response.data.datauseraccout);
         addUserAccounts(response.data.datauseraccout.useraccout);

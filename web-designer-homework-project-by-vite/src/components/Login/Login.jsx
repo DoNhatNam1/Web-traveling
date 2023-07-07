@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react'
 import { Link, useNavigate} from 'react-router-dom'
+import bcrypt from 'bcryptjs';
 import './login.css'
 import video from '../../assets/video-rain.mp4'
 import logo from '../../assets/logo.jpg'
@@ -18,7 +19,6 @@ const Login = () => {
   const { userAccounts, setUserAccounts, login, isLoggedIn, userData, registerStatus, setRegisterStatus } = useContext( Context )
   const navigateTo = useNavigate()
   const [loginStatus, setLoginStatus] = useState('Off')
-  // const [statusHolder, setStatusHolder] = useState('message')
 
   const fetchData = async () => {
     try {
@@ -37,13 +37,12 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn && userData !== null) {
-      navigateTo('/dashboard');
+      navigateTo('/userdashboard');
     }
   }, [isLoggedIn, navigateTo]);
 
   useEffect(() => {
     if(loginStatus !== 'Off'){
-      // setStatusHolder('showMessage')
       setTimeout(() => {
         toast.error('Invalid username or password!', {
           position: "bottom-right",
@@ -55,14 +54,12 @@ const Login = () => {
           progress: undefined,
           theme: "colored",
         });
-        // setStatusHolder('message')
       }, 1000);
     }
   }, [loginStatus])
 
   useEffect(() => {
     if(registerStatus === true){
-      // setStatusHolder('showMessage')
       setRegisterStatus(false);
 
         toast.success('Register successful!', {
@@ -75,30 +72,48 @@ const Login = () => {
           progress: undefined,
           theme: "colored",
         });
-        // setStatusHolder('message')
       
     }
   }, [registerStatus])
 
   const loginUser = (e) => {
     e.preventDefault();
-  
-    let userAccount = userAccounts.find( user => 
-      user.UserName === loginUserName && user.Pass === loginPassword
-    );
-  
-    if (userAccount) {
-      login(userAccount);
-      navigateTo('/dashboard');
-    } else {
+    
+    let matchUserAccount = userAccounts.find(account => bcrypt.compareSync(loginUserName, account.UserName) && bcrypt.compareSync(loginPassword, account.Pass));
+    
+    console.log(matchUserAccount);
+
+
+    if (matchUserAccount){
+      let USerAccount = {
+        UserNameLogin: loginUserName
+      };
+      let isMatchUserName = bcrypt.compareSync(loginUserName, matchUserAccount.UserName);
+      let isMatchPassword = bcrypt.compareSync(loginPassword, matchUserAccount.Pass);
+      if (isMatchUserName && isMatchPassword) {
+        login(USerAccount);
+        navigateTo('/userdashboard');
+      } else {
+        setLoginStatus('On');
+        setLoginUserName('');
+        setLoginPassword('');
+        setTimeout(() => {
+          setLoginStatus('Off');
+        }, 500);
+        navigateTo('/login');
+      }
+    } else if (!matchUserAccount) {
       setLoginStatus('On');
-      setLoginUserName('');
-      setLoginPassword('');
-      setTimeout(() => {
-        setLoginStatus('Off');
-      }, 500);
-      navigateTo('/login');
+        setLoginUserName('');
+        setLoginPassword('');
+        setTimeout(() => {
+          setLoginStatus('Off');
+        }, 500);
+        navigateTo('/login');
     }
+
+  
+ 
   };
 
 
@@ -129,7 +144,6 @@ const Login = () => {
               </div>
 
               <form action='' className='form grid'>
-                {/* <span className={statusHolder}>{loginStatus}</span> */}
                 <div className="inputDiv">
                   <label htmlFor="username">Tài khoản</label>
                   <div className="input flex">

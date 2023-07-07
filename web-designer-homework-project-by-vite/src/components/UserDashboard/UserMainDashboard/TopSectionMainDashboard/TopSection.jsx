@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import './topsection.css'
 // import { BiSearchAlt } from 'react-icons/bi'
-import { Context } from '../../../context/Context'
+import { Context } from '../../../../context/Context'
 import { TbMessageCircle } from 'react-icons/tb'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { BsArrowRightShort } from 'react-icons/bs'
 import { BsQuestionCircle } from 'react-icons/bs'
-import video from '../../../assets/video-rain.mp4'
-import img from '../../../assets/admin-img.jpg'
-import img2 from '../../../assets/home-furniture.jpg'
+import video from '../../../../assets/video-rain.mp4'
+import img from '../../../../assets/admin-img.jpg'
+import img2 from '../../../../assets/home-furniture.jpg'
 
 const TopSection = () => {
   const { userData } = useContext(Context); 
@@ -17,7 +17,7 @@ const TopSection = () => {
       <div className="headerSection flex">
         <div className="title-dashboard">
           <h1>Chào mừng tới Travel.</h1>
-          <p>Xin chào {userData.UserName}, mừng bạn quay trở lại!</p>
+          <p>Xin chào {userData.UserNameLogin}, mừng bạn quay trở lại!</p>
         </div>
 
         {/* <div className="searchBar flex">

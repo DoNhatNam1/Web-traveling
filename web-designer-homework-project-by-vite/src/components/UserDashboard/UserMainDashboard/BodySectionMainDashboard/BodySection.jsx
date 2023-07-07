@@ -1,7 +1,7 @@
 import React from 'react'
 import './bodysection.css'
-import TopSection from '../TopSectionDashboard/TopSection'
-import Listing from '../ListingSectionDashboard/ListingSection'
+import TopSection from '../TopSectionMainDashboard/TopSection'
+import Listing from '../ListingSectionMainDashboard/ListingSection'
 const BodySection = () => {
   return (
     <div className='mainContent'>

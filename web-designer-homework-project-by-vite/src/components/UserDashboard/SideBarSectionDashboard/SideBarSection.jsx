@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import './sidebarsection.css'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../../assets/logo.jpg'
 import { IoMdSpeedometer } from 'react-icons/io'
 import { IoTicketOutline } from 'react-icons/io5'
@@ -12,7 +13,7 @@ import { BsQuestionCircle } from 'react-icons/bs'
 import { MdOutlineLogout } from 'react-icons/md'
 import { MdPayment } from 'react-icons/md'
 import { Context } from '../../../context/Context'
-import { useNavigate } from 'react-router-dom'
+
 
 const SideBarSection = () => {
       const { logout } = useContext(Context); 
@@ -26,8 +27,10 @@ const SideBarSection = () => {
   return (
     <div className='sideBar grid-dashboard'>
         <div className="logoDiv flex">
+            <Link to = '/' className='flex'>
            <img src={logo} alt="Image Name" />
            <h2>Travel.</h2> 
+           </Link>
         </div>
 
         <div className="menuDivDashboard">
@@ -36,39 +39,39 @@ const SideBarSection = () => {
             </h3>
             <ul className="menuLists grid-dashboard">
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='/userdashboard' className='menuLink flex'>
                         <IoMdSpeedometer className = 'icon-dashboard'/>
                         <span className="smallText">
                             Dash board
                         </span>
-                    </a>
+                    </Link>
                 </li>
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to="/userdashboard/orderstatement" className='menuLink flex'>
                         <IoTicketOutline className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đơn đặt chỗ
                         </span>
-                    </a>
+                    </Link>
                 </li>  
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='/userdashboard/mycomment' className='menuLink flex'>
                         <AiOutlineStar className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đánh giá của tôi 
                         </span>
-                    </a>
+                    </Link>
                 </li> 
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to ='/userdashboard/myfavorites' className='menuLink flex'>
                         <AiOutlineHeart className = 'icon-dashboard'/>
                         <span className="smallText">
                             Yêu thích đã lưu
                         </span>
-                    </a>
+                    </Link>
                 </li>
 
             </ul>
@@ -80,39 +83,39 @@ const SideBarSection = () => {
             </h3>
             <ul className="menuLists grid-dashboard">
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='/userdashboard/profile/info' className='menuLink flex'>
                         <MdOutlinePermContactCalendar className = 'icon-dashboard'/>
                         <span className="smallText">
                             Thông tin cá nhân
                         </span>
-                    </a>
+                    </Link>
                 </li>
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='/userdashboard/changepassword' className='menuLink flex'>
                         <Si1Password className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đổi mật khẩu
                         </span>
-                    </a>
+                    </Link>
                 </li>  
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='userdashboard/historypayment' className='menuLink flex'>
                         <MdPayment className = 'icon-dashboard'/>
                         <span className="smallText">
                             Lịch sử thanh toán
                         </span>
-                    </a>
+                    </Link>
                 </li> 
 
                 <li className="listItem">
-                    <a href="#" className='menuLink flex'>
+                    <Link to='/userdashboard/mailtodeleteaccount' className='menuLink flex'>
                         <BiMailSend className = 'icon-dashboard'/>
                         <span className="smallText">
                             Yêu cầu xóa tài khoản
                         </span>
-                    </a>
+                    </Link>
                 </li> 
 
                 <li className="listItem">

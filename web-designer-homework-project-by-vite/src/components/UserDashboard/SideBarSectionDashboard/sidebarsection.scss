@@ -75,7 +75,8 @@
                 button{
                     border: none;
                     outline: none;
-                    background: none ;
+                    background: none;
+                    cursor: pointer;
 
                     .menuLink{
                         color: var(--greyTextDashboard);
@@ -86,6 +87,11 @@
                             margin-right: .5rem;
                         }
                     }
+
+                    &:hover .menuLink{
+                        color: var(--PrimaryColorDashboard);
+                        transition: 0;
+                }
                 }
 
                 .menuLink{
@@ -103,10 +109,7 @@
                     transition: 0;
             }
 
-            &:hover .menuLink{
-                color: var(--PrimaryColorDashboard);
-                transition: 0;
-        }
+
 
             &:hover::before{
                 height: 100%;

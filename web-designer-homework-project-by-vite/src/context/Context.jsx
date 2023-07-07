@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+// import Cookies from 'js-cookie';
 
 export const Context = createContext();
 
@@ -31,7 +32,7 @@ export const ContextProvider = (props) => {
   const logout = () => {
     setIsLoggedIn(false);
     setUserData(null);
-    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userData');
   };
 

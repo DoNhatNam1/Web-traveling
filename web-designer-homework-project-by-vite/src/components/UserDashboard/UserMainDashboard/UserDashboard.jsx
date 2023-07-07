@@ -1,26 +1,24 @@
 import React, { useContext, useEffect } from 'react'
-import './dashboard.css'
-import { Context } from '../../context/Context'
+import './userdashboard.css'
+import { Context } from '../../../context/Context'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SideBarSection from './SideBarSectionDashboard/SideBarSection';
-import BodySection from './BodySectionDashboard/BodySection';
+import SideBarSection from '../SideBarSectionDashboard/SideBarSection';
+import BodySection from './BodySectionMainDashboard/BodySection';
 
-  const Dashboard = () => {
+  const UserDashboard = () => {
       const { isLoggedIn, userData, logout, dashboardShowNLoginSuccess, setDashboardShowLoginSuccess } = useContext(Context); 
+
       const navigateTo = useNavigate()
           useEffect(() => {
-            if (!isLoggedIn || userData === null) {
-              logout();
-              navigateTo('/login');
+            console.log(userData);
+            console.log(isLoggedIn);
+             if (!isLoggedIn && userData === null){
+               logout();
+               navigateTo('/login');
             }
-          }, []);
-
-          const handleLogout = () => {
-            logout();
-            navigateTo('/login');
-          };
+          }, [isLoggedIn, userData, navigateTo]);
 
           useEffect(() => {
             if(dashboardShowNLoginSuccess === true){
@@ -46,7 +44,6 @@ import BodySection from './BodySectionDashboard/BodySection';
             <div className='container-dashboard'>
                 <SideBarSection />
                 <BodySection />
-                {/* <button onClick={handleLogout}>Log Out</button> */}
             </div>
           )}
             <ToastContainer />
@@ -54,4 +51,4 @@ import BodySection from './BodySectionDashboard/BodySection';
       );
     }; 
 
-export default Dashboard;
+export default UserDashboard;

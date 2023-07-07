@@ -66,6 +66,7 @@
   border: none;
   outline: none;
   background: none;
+  cursor: pointer;
 }
 .sideBar .menuDivDashboard .menuLists .listItem button .menuLink, .sideBar .settingsDiv .menuLists .listItem button .menuLink {
   color: var(--greyTextDashboard);
@@ -75,6 +76,10 @@
 .sideBar .menuDivDashboard .menuLists .listItem button .menuLink .icon-dashboard, .sideBar .settingsDiv .menuLists .listItem button .menuLink .icon-dashboard {
   margin-right: 0.5rem;
 }
+.sideBar .menuDivDashboard .menuLists .listItem button:hover .menuLink, .sideBar .settingsDiv .menuLists .listItem button:hover .menuLink {
+  color: var(--PrimaryColorDashboard);
+  transition: 0;
+}
 .sideBar .menuDivDashboard .menuLists .listItem .menuLink, .sideBar .settingsDiv .menuLists .listItem .menuLink {
   color: var(--greyTextDashboard);
   font-weight: 500;
@@ -82,10 +87,6 @@
 }
 .sideBar .menuDivDashboard .menuLists .listItem .menuLink .icon-dashboard, .sideBar .settingsDiv .menuLists .listItem .menuLink .icon-dashboard {
   margin-right: 0.5rem;
-}
-.sideBar .menuDivDashboard .menuLists .listItem:hover .menuLink, .sideBar .settingsDiv .menuLists .listItem:hover .menuLink {
-  color: var(--PrimaryColorDashboard);
-  transition: 0;
 }
 .sideBar .menuDivDashboard .menuLists .listItem:hover .menuLink, .sideBar .settingsDiv .menuLists .listItem:hover .menuLink {
   color: var(--PrimaryColorDashboard);
