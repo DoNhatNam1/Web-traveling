@@ -18,6 +18,7 @@ app.use('/admin', usersRoutes.routes);
 app.use('/bookform', usersRoutes.routes);
 app.use('/register', useraccoutsRoutes.routes);
 app.use('/login', useraccoutsRoutes.routes);
+app.use('/userdashboard', useraccoutsRoutes.routes);
 
 
 app.listen(config.port, () => console.log('server is up and listening on http://localhost:' + config.port));

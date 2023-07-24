@@ -20,4 +20,19 @@ VALUES (
 Select @MaTaiKhoan = SCOPE_IDENTITY()
 END
 
+Insert into [dbo].[UserInfo] (
+    [MaTaiKhoan]
+)
+values (
+    @MaTaiKhoan
+)
+
+Insert into [dbo].[UserRanking] (
+    [MaTaiKhoan]
+)
+values (
+    @MaTaiKhoan
+)
+
+
 SELECT * FROM [dbo].[UserAccout] WHERE [UserAccout].[MaTaiKhoan] = @MaTaiKhoan

@@ -1,44 +1,69 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import backendinfoandrankinguser from '../../../../apis/user-dashboard-backend-info-and-ranking'
+import { Context } from '../../../../context/Context'
+import { useParams, useNavigate } from 'react-router-dom'
 import './profileheading.css'
-import img from '../../../../assets/admin-img.jpg'
 
 const ProfileHeading = () => {
-  const [activeLink, setActiveLink] = useState('About');
+  const { userData } = useContext(Context);
+  const [imageUrl, setImageUrl] = useState(""); 
+  const { id } = useParams();
+  const navigateTo = useNavigate()
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await backendinfoandrankinguser.get(`/${id}`);
+      console.log(response.data.datauseraccout);
+      setImageUrl(response.data.datauseraccout.useraccoutinfo[0].ImageUserAccount);
+    };
+
+    fetchData();
+  }, []);
+
+  const handleUpdate = (e, MaTaiKhoan) => {
+    e.stopPropagation();
+    navigateTo(`/userdashboard/profile/${MaTaiKhoan}/edit`);
   };
+
+  const handleLinkClick1 = (e, MaTaiKhoan) => {
+    e.preventDefault();
+    navigateTo(`/userdashboard/profile/${MaTaiKhoan}/info`);
+  };
+  const handleLinkClick2 = (e, MaTaiKhoan) => {
+    e.preventDefault();
+    navigateTo(`/userdashboard/profile/${MaTaiKhoan}/ranking`);
+  };
+
+
   return (
     <div className='headingSection flex'>
       <div className="ImgContainer">
-        <img src={img} alt="User Profile" />
+        <img src={imageUrl} alt="User Profile"/>
       </div>
 
-      <div className="NameAndSeclectGroup grid">
+      <div className="NameAndSelectGroup grid">
         <h5>Đỗ Nhật Nam</h5>
         <h6>Vai trò: Khách hàng</h6>
         
         <div className="linkGp flex">
-          <Link
-            to='/userdashboard/profile/info/'
-            className={activeLink === 'About' ? 'active' : ''}
-            onClick={() => handleLinkClick('About')}
+          <button         
+            className='active'
+            onClick={(e) => handleLinkClick1(e, userData.idUser)}
           >
             Thông tin
-          </Link>
-          <Link
-             to='/userdashboard/profile/info/##/'
-            className={activeLink === 'TimeLink' ? 'active' : ''}
-            onClick={() => handleLinkClick('TimeLink')}
+          </button>
+          <button 
+            className=''
+            onClick={(e) => handleLinkClick2(e, userData.idUser)}
           >
             Hội viên
-          </Link>
+          </button>
         </div>
       </div>
 
       <div className="edit-btn">
-        <button className='btn'>Edit Profile</button>
+        <button className='btn'
+        onClick={(e) => handleUpdate(e, userData.idUser)}>Edit Profile</button>
       </div>
     </div>
   )

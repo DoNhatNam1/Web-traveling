@@ -19,9 +19,22 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import UserDashboard from './components/UserDashboard/UserMainDashboard/UserDashboard';
 import ProfileContainer from './components/UserDashboard/UserDashboardProfile/ProfileContain/ProfileContainer';
+import ProfileContainer2 from './components/UserDashboard/UserDashboardProfile/ProfileContainer2/ProfileContainer2';
+import ProfileEditMain from './components/UserDashboard/UserDashboardProfile/ProfileEditMain/ProfileEditMain';
+import UserChangePasswordContainer from './components/UserDashboard/UserDashboardChangePassword/UserChangePasswordContainer/UserChangePasswordContainer'
 
 const App = () => {
- 
+  const hours = 4; 
+  const now = new Date().getTime();
+  const setupTime = localStorage.getItem('setupTime');
+  if (setupTime === null) {
+        localStorage.setItem('setupTime', now)
+    } else {
+          if(now-setupTime > hours*60*60*1000) {
+                localStorage.clear()
+                localStorage.setItem('setupTime', now);
+              }
+            };
   return (
     <ContextProvider>
  <>
@@ -39,10 +52,13 @@ const App = () => {
       <Route path="/Blogs/:id" element={<DetailBlogView />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/userdashboard" element={<UserDashboard />} />
+      <Route path="//userdashboard/maindashboard/:id" element={<UserDashboard />} />
       <Route path="/register" element={<Register />} />
       <Route path="/AddProduct" element={<ProductPage />} />
-      <Route path="/userdashboard/profile/info" element={<ProfileContainer />} />
+      <Route path="/userdashboard/profile/:id/info" element={<ProfileContainer />} />
+      <Route path="/userdashboard/changepassword/:id" element={<UserChangePasswordContainer/>} />
+      <Route path="/userdashboard/profile/:id/ranking" element={<ProfileContainer2 />} />
+      <Route path="/userdashboard/profile/:id/edit" element={<ProfileEditMain />} />
     </Routes>
   </Router>
   </>

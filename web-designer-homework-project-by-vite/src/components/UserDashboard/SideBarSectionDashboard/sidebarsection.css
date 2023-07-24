@@ -189,11 +189,15 @@
   .sideBar .menuDivDashboard .divTitle, .sideBar .menuDivDashboard .smallText, .sideBar .settingsDiv .divTitle, .sideBar .settingsDiv .smallText {
     display: none;
   }
+  .sideBar .menuDivDashboard .menuLists, .sideBar .settingsDiv .menuLists {
+    gap: 2.5rem;
+  }
   .sideBar .menuDivDashboard .menuLists .listItem button, .sideBar .settingsDiv .menuLists .listItem button {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
+    bottom: 0;
   }
   .sideBar .menuDivDashboard .menuLists .listItem button .menuLink, .sideBar .settingsDiv .menuLists .listItem button .menuLink {
     justify-content: center;

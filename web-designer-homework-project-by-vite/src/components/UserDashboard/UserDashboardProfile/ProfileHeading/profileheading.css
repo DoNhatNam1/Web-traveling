@@ -31,29 +31,30 @@
   height: 84%;
   border-radius: 50%;
 }
-.headingSection .NameAndSeclectGroup {
+.headingSection .NameAndSelectGroup {
   height: auto;
   flex-basis: 60%;
   gap: 0.5rem;
 }
-.headingSection .NameAndSeclectGroup h5 {
+.headingSection .NameAndSelectGroup h5 {
   font-size: var(--h2FontSize);
   color: var(--blackColorDashboard);
   font-weight: 500;
 }
-.headingSection .NameAndSeclectGroup h6 {
+.headingSection .NameAndSelectGroup h6 {
   font-size: var(--h3FontSize);
   color: var(--PrimaryColorDashboard);
   font-weight: 700;
   margin-bottom: 10px;
 }
-.headingSection .NameAndSeclectGroup .linkGp {
+.headingSection .NameAndSelectGroup .linkGp {
   border-bottom: 1px solid var(--greyTextDashboard);
   margin: 8px 16px;
   padding-bottom: 1px;
 }
-.headingSection .NameAndSeclectGroup .linkGp a {
+.headingSection .NameAndSelectGroup .linkGp button {
   transform: translateY(2px);
+  border: none;
   border-bottom: 2px solid var(--greyTextDashboard);
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
   padding: 8px 16px;
@@ -61,11 +62,11 @@
   color: var(--PrimaryColorDashboard);
   font-weight: 700;
 }
-.headingSection .NameAndSeclectGroup .linkGp a.active {
+.headingSection .NameAndSelectGroup .linkGp button.active {
   border-color: var(--PrimaryColorDashboard);
   color: var(--textColorDashboard);
 }
-.headingSection .NameAndSeclectGroup .linkGp a:hover {
+.headingSection .NameAndSelectGroup .linkGp button:hover {
   color: var(--blackColorDashboard);
   background-color: var(--paleGreenDashboard);
 }
@@ -85,7 +86,7 @@
   .headingSection .ImgContainer img {
     width: 80%;
   }
-  .headingSection .NameAndSeclectGroup {
+  .headingSection .NameAndSelectGroup {
     flex-basis: 40%;
   }
   .headingSection .edit-btn {
@@ -104,10 +105,10 @@
     align-items: flex-end;
     padding-bottom: 0.5rem;
   }
-  .NameAndSeclectGroup h5 {
+  .NameAndSelectGroup h5 {
     text-align: center;
   }
-  .NameAndSeclectGroup h6 {
+  .NameAndSelectGroup h6 {
     text-align: center;
   }
   .edit-btn {
@@ -116,7 +117,7 @@
   }
 }
 @media screen and (max-width: 370px) {
-  .headingSection .NameAndSeclectGroup .linkGp a {
+  .headingSection .NameAndSelectGroup .linkGp button {
     font-size: var(--smallFontSize);
   }
 }

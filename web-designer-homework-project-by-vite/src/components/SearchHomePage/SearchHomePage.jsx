@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './searchhome.css'
+import img from '../../assets/travelpic/route-no-schedule.png'
 import { BarLoader } from 'react-spinners';
 import backendPackagesSearchUrl from '../../apis/package-searching-menu';
 import { Context } from '../../context/Context'
@@ -168,9 +169,17 @@ const SearchHomePage = () => {
                 </h3>
                 </div>
               <div className="secTitle-search-fail">
-                <h3 data-aos="fade-right" className="title-search-fail">
+                <h4 data-aos="fade-right" className="title-search-fail">
               Không tìm thấy kết quả phù hợp.
-                </h3>
+                </h4>
+                <div className="smalltitleText">
+                  <p>Xin vui lòng tìm vé với thông tin cần tìm khác</p>
+                </div>
+                
+                <div className="imgNotFoundsearch">
+                <img src={img} alt="Not founding" />
+                </div>
+
               </div>
               </section>
             )) : (

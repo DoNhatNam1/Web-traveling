@@ -31,10 +31,11 @@
             width: 80%;
             height: 84%;
             border-radius: 50%;
+        
         }
     }
 
-    .NameAndSeclectGroup{
+    .NameAndSelectGroup{
         height: auto;
         flex-basis: 60%;
         gap: .5rem;
@@ -56,8 +57,9 @@
             margin: 8px 16px;
             padding-bottom: 1px;
             
-            a {
+            button {
                 transform: translateY(2px);
+                border: none;
               border-bottom: 2px solid var(--greyTextDashboard);
               transition: border-color 0.3s, color 0.3s, background-color 0.3s;
               padding: 8px 16px;
@@ -99,7 +101,7 @@
             }
         }
 
-        .NameAndSeclectGroup{
+        .NameAndSelectGroup{
             flex-basis: 40%;
         }
 
@@ -126,7 +128,7 @@
         padding-bottom: .5rem;
     }
     
-    .NameAndSeclectGroup{
+    .NameAndSelectGroup{
         h5{
             text-align: center;
         }
@@ -144,9 +146,9 @@
 
 @media screen and (max-width: 370px){
     .headingSection{
-        .NameAndSeclectGroup{
+        .NameAndSelectGroup{
             .linkGp{
-                a{
+                button{
                     font-size: var(--smallFontSize);
                 }
             }

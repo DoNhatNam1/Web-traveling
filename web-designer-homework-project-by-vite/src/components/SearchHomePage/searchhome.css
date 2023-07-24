@@ -41,6 +41,18 @@
   margin: 1rem 0;
   z-index: 2;
 }
+.main .secTitle-search-fail .smalltitleText {
+  text-align: center;
+}
+.main .secTitle-search-fail .imgNotFoundsearch {
+  width: 80%;
+  position: relative;
+  left: 8rem;
+  top: 1rem;
+}
+.main .secTitle-search-fail .imgNotFoundsearch img {
+  border-radius: 1rem;
+}
 .main .secContent {
   justify-content: center;
   gap: 1.5rem;
@@ -165,5 +177,38 @@
   }
   .secContent .singleDestination .cardInfo .fees .price h5 {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .main .secTitle-search-fail .imgNotFoundsearch {
+    width: 80%;
+    position: relative;
+    left: 6rem;
+  }
+}
+@media screen and (max-width: 820px) {
+  .main .secTitle-search-fail .imgNotFoundsearch {
+    width: 80%;
+    position: relative;
+    left: 4rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .main .secTitle-search-fail .title-search-fail {
+    padding-right: 1rem;
+    font-size: 24px;
+  }
+  .main .secTitle-search-fail .imgNotFoundsearch {
+    width: 90%;
+    position: relative;
+    left: 0.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .secTitle-search-fail .imgNotFoundsearch {
+    width: 100%;
+    padding-right: 1rem;
+    position: relative;
+    left: 1px;
   }
 }/*# sourceMappingURL=searchhome.css.map */

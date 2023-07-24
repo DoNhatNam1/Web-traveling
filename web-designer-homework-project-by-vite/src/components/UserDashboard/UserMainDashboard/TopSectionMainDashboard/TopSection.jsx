@@ -1,17 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './topsection.css'
 // import { BiSearchAlt } from 'react-icons/bi'
 import { Context } from '../../../../context/Context'
+import backendinfoandrankinguser from '../../../../apis/user-dashboard-backend-info-and-ranking'
+import { useParams } from 'react-router-dom'
 import { TbMessageCircle } from 'react-icons/tb'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { BsArrowRightShort } from 'react-icons/bs'
 import { BsQuestionCircle } from 'react-icons/bs'
 import video from '../../../../assets/video-rain.mp4'
-import img from '../../../../assets/admin-img.jpg'
 import img2 from '../../../../assets/home-furniture.jpg'
 
 const TopSection = () => {
   const { userData } = useContext(Context); 
+  const [imageUrl, setImageUrl] = useState(""); 
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await backendinfoandrankinguser.get(`/${id}`);
+      console.log(response.data.datauseraccout);
+      setImageUrl(response.data.datauseraccout.useraccoutinfo[0].ImageUserAccount);
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className='topSection'>
       <div className="headerSection flex">
@@ -29,7 +42,7 @@ const TopSection = () => {
           <TbMessageCircle className= 'icon-dashboard' />
           <IoIosNotificationsOutline className = 'icon-dashboard' />
           <div className="adminImage">
-            <img src={img} alt="Admin Image" />
+            <img src={imageUrl} alt="Admin Image" />
           </div>
         </div>
 

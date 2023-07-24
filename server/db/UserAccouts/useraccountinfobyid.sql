@@ -1,0 +1,10 @@
+SELECT  [UserAccout].[MaTaiKhoan]
+        ,[UserInfo].[HoVaTen]
+        ,[UserInfo].[QueQuan]
+        ,[UserInfo].[Sdt]
+        ,[UserInfo].[DiaChi]
+        ,[UserInfo].[Tuoi]
+        ,[UserInfo].[ImageUserAccount]
+FROM [dbo].[UserAccout]
+INNER JOIN [dbo].[UserInfo] ON [UserAccout].[MaTaiKhoan] = [UserInfo].[MaTaiKhoan]
+WHERE [UserAccout].[MaTaiKhoan]=@MaTaiKhoan and [UserInfo].[MaTaiKhoan] = @MaTaiKhoan

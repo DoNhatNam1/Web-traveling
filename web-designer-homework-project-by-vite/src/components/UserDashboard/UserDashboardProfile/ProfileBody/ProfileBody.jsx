@@ -1,7 +1,31 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
+import backendinfoandrankinguser from '../../../../apis/user-dashboard-backend-info-and-ranking'
 import './profilebody.css'
 
 const ProfileBody = () => {
+  const { id } = useParams();
+
+
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+    const [phone, setPhone] = useState('');
+    const [borned, setBorned] = useState('');
+    const [address, setAddress] = useState('');
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const response = await backendinfoandrankinguser.get(`/${id}`);
+        console.log(response.data.datauseraccout);
+        setName(response.data.datauseraccout.useraccoutinfo[0].HoVaTen);
+        setAge(response.data.datauseraccout.useraccoutinfo[0].Tuoi);
+        setPhone(response.data.datauseraccout.useraccoutinfo[0].Sdt);
+        setBorned(response.data.datauseraccout.useraccoutinfo[0].QueQuan);
+        setAddress(response.data.datauseraccout.useraccoutinfo[0].DiaChi);
+      };
+  
+      fetchData();
+    }, []);
   return (
     <>
     <div className='bodyProfileSection'>
@@ -12,7 +36,7 @@ const ProfileBody = () => {
           <span>Họ và tên:</span>
           </div>
             <div className="PagrarphItem">
-            <p>Đỗ Nhật Nam</p>
+            <p>{name}</p>
             </div>
         </div>
         <div className="labelItem flex">
@@ -20,7 +44,7 @@ const ProfileBody = () => {
           <span>Tuổi:</span>
           </div>
             <div className="PagrarphItem">
-            <p>21 tuổi</p>
+            <p>{age} tuổi</p>
             </div>
         </div>
         <div className="labelItem flex">
@@ -28,7 +52,7 @@ const ProfileBody = () => {
           <span>Quê quán:</span>
           </div>
             <div className="PagrarphItem">
-            <p>Vũng Tàu</p>
+            <p>{borned}</p>
             </div>
         </div>
         <div className="labelItem flex">
@@ -36,7 +60,7 @@ const ProfileBody = () => {
           <span>Số điện thoại:</span>
           </div>
             <div className="PagrarphItem">
-            <p>0363982926</p>
+            <p>{phone}</p>
             </div>
         </div>
         <div className="labelItem flex">
@@ -44,7 +68,7 @@ const ProfileBody = () => {
           <span>Địa chỉ hiện tại:</span>
           </div>
             <div className="PagrarphItem">
-            <p>Chung cư Bàu Cát 2 Lô B</p>
+            <p>{address}</p>
             </div>
         </div>
       </div>

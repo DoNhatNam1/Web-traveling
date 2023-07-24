@@ -164,6 +164,8 @@
 }
 .home .homeContent .cardDiv .searchButton .searchOptions span {
   font-size: 13px;
+  color: var(--whiteColor);
+  font-weight: 600;
 }
 .home .homeContent .homeFooterIcons {
   width: 100%;

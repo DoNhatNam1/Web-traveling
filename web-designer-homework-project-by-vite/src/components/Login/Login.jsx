@@ -37,7 +37,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn && userData !== null) {
-      navigateTo('/userdashboard');
+      navigateTo(`/userdashboard/maindashboard/${userData.idUser}`);
     }
   }, [isLoggedIn, navigateTo]);
 
@@ -86,13 +86,14 @@ const Login = () => {
 
     if (matchUserAccount){
       let USerAccount = {
+        idUser: matchUserAccount.MaTaiKhoan,
         UserNameLogin: loginUserName
       };
       let isMatchUserName = bcrypt.compareSync(loginUserName, matchUserAccount.UserName);
       let isMatchPassword = bcrypt.compareSync(loginPassword, matchUserAccount.Pass);
       if (isMatchUserName && isMatchPassword) {
         login(USerAccount);
-        navigateTo('/userdashboard');
+        navigateTo(`/userdashboard/maindashboard/${matchUserAccount.MaTaiKhoan}`);
       } else {
         setLoginStatus('On');
         setLoginUserName('');

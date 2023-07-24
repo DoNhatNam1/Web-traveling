@@ -16,13 +16,62 @@ import { Context } from '../../../context/Context'
 
 
 const SideBarSection = () => {
-      const { logout } = useContext(Context); 
+      const { 
+        logout, 
+        userData, 
+        setIsOpenPopupRequestUserDashboard 
+    } = useContext(Context); 
     const navigateTo = useNavigate()
 
     const handleLogout = () => {
         logout();
         navigateTo('/login');
       };
+
+    const handleLinkingInfo = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/profile/${MaTaiKhoan}/info`);
+      };
+
+      const handleLinkingMainDashBoard = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/maindashboard/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingChangePassword = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/changepassword/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingUserOrderList = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/orderlist/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingCommentHistory = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/commenthistory/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingUserFavor = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/savedfavor/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingUserPaymentHistory = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/paymenthistory/${MaTaiKhoan}`);
+      };
+
+      const handleLinkingSendingMailToDeleteAccount = (e, MaTaiKhoan) => {
+        e.stopPropagation();
+        navigateTo(`/userdashboard/maindashboard/${MaTaiKhoan}`);
+        setIsOpenPopupRequestUserDashboard(true);
+      };
+
+
+
+
 
   return (
     <div className='sideBar grid-dashboard'>
@@ -39,39 +88,51 @@ const SideBarSection = () => {
             </h3>
             <ul className="menuLists grid-dashboard">
                 <li className="listItem">
-                    <Link to='/userdashboard' className='menuLink flex'>
+                    <button 
+                     onClick={(e) => handleLinkingMainDashBoard(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <IoMdSpeedometer className = 'icon-dashboard'/>
                         <span className="smallText">
                             Dash board
                         </span>
-                    </Link>
+                    </button>
                 </li>
 
                 <li className="listItem">
-                    <Link to="/userdashboard/orderstatement" className='menuLink flex'>
+                <button 
+                     onClick={(e) => handleLinkingUserOrderList(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <IoTicketOutline className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đơn đặt chỗ
                         </span>
-                    </Link>
+                    </button>
                 </li>  
 
                 <li className="listItem">
-                    <Link to='/userdashboard/mycomment' className='menuLink flex'>
+                <button 
+                     onClick={(e) => handleLinkingCommentHistory(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <AiOutlineStar className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đánh giá của tôi 
                         </span>
-                    </Link>
+                    </button>
                 </li> 
 
                 <li className="listItem">
-                    <Link to ='/userdashboard/myfavorites' className='menuLink flex'>
+                <button 
+                     onClick={(e) => handleLinkingUserFavor(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <AiOutlineHeart className = 'icon-dashboard'/>
                         <span className="smallText">
                             Yêu thích đã lưu
                         </span>
-                    </Link>
+                    </button>
                 </li>
 
             </ul>
@@ -83,43 +144,58 @@ const SideBarSection = () => {
             </h3>
             <ul className="menuLists grid-dashboard">
                 <li className="listItem">
-                    <Link to='/userdashboard/profile/info' className='menuLink flex'>
+                    <button 
+                    onClick={(e) => handleLinkingInfo(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <MdOutlinePermContactCalendar className = 'icon-dashboard'/>
                         <span className="smallText">
                             Thông tin cá nhân
                         </span>
-                    </Link>
+                    </button>
                 </li>
 
                 <li className="listItem">
-                    <Link to='/userdashboard/changepassword' className='menuLink flex'>
+                <button 
+                    onClick={(e) => handleLinkingChangePassword(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <Si1Password className = 'icon-dashboard'/>
                         <span className="smallText">
                             Đổi mật khẩu
                         </span>
-                    </Link>
+                    </button>
                 </li>  
 
                 <li className="listItem">
-                    <Link to='userdashboard/historypayment' className='menuLink flex'>
+                <button 
+                     onClick={(e) => handleLinkingUserPaymentHistory(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <MdPayment className = 'icon-dashboard'/>
                         <span className="smallText">
                             Lịch sử thanh toán
                         </span>
-                    </Link>
+                    </button>
                 </li> 
 
                 <li className="listItem">
-                    <Link to='/userdashboard/mailtodeleteaccount' className='menuLink flex'>
+                <button 
+                     onClick={(e) => handleLinkingSendingMailToDeleteAccount(e, userData.idUser)} 
+                    className='menuLink flex'
+                    >
                         <BiMailSend className = 'icon-dashboard'/>
                         <span className="smallText">
                             Yêu cầu xóa tài khoản
                         </span>
-                    </Link>
+                    </button>
                 </li> 
 
                 <li className="listItem">
-                    <button onClick={handleLogout} className='menuLink flex'>
+                    <button 
+                    onClick={handleLogout} 
+                    className='menuLink flex'
+                    >
                         <MdOutlineLogout className = 'icon-dashboard'/>
                         <span className="smallText">
                             Log out

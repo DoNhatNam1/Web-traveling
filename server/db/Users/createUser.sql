@@ -12,7 +12,11 @@ BEGIN
         [DienThoai], 
         [DiaChi]
     ) 
-values (@tenkhach, @dienthoai, @diachi)
+values (
+    @tenkhach, 
+    @dienthoai, 
+    @diachi
+    )
     Select @makhach = SCOPE_IDENTITY()
 End 
 
