@@ -6,7 +6,11 @@ import { Context } from '../../../../context/Context'
 import ProfileBody2 from '../ProfileBody2/ProfileBody2'
 
 const UserProfileMain2 = () => {
-  const { isLoggedIn, userData, logout } = useContext(Context);
+  const { 
+    isLoggedIn, 
+    userData, 
+    logout 
+  } = useContext(Context);
 
   const navigateTo = useNavigate()
       useEffect(() => {

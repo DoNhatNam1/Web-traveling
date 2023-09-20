@@ -6,7 +6,11 @@ import SideBarSection from '../../SideBarSectionDashboard/SideBarSection'
 import ProfileEditBody from '../ProfileEditBody/ProfileEditBody'
 
 const ProfileEditMain = () => {
-    const { isLoggedIn, userData, logout } = useContext(Context); 
+    const { 
+      isLoggedIn, 
+      userData, 
+      logout 
+    } = useContext(Context); 
 
     const navigateTo = useNavigate()
         useEffect(() => {

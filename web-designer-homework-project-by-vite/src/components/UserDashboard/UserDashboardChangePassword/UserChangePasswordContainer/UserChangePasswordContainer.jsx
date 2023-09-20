@@ -6,7 +6,11 @@ import SideBarSection from '../../SideBarSectionDashboard/SideBarSection'
 import UserChangePasswordBody from '../UserChangePasswordBody/UserChangePasswordBody'
 
 const UserChangePasswordContainer = () => {
-  const { isLoggedIn, userData, logout } = useContext(Context); 
+  const { 
+    isLoggedIn, 
+    userData, 
+    logout 
+  } = useContext(Context); 
 
   const navigateTo = useNavigate()
       useEffect(() => {

@@ -6,7 +6,11 @@ import ProFileBody from '../ProfileBody/ProfileBody'
 import { Context } from '../../../../context/Context'
 
 const UserProfileMain = () => {
-  const { isLoggedIn, userData, logout } = useContext(Context);
+  const { 
+    isLoggedIn, 
+    userData, 
+    logout 
+  } = useContext(Context);
 
   const navigateTo = useNavigate()
       useEffect(() => {

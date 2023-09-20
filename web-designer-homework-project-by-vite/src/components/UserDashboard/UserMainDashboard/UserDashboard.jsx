@@ -197,12 +197,8 @@ import BodySection from './BodySectionMainDashboard/BodySection';
                   setDashboardShowSendingDelMessFail(true);
                   setInputValuePopupUserDashboard('');
                   closePopupUserDashboard();
-                }
-              
-              
-          
+                }    
           };
-
 
       return (
         <>

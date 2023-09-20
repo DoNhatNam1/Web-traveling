@@ -10,7 +10,7 @@
   cursor: pointer;
   color: hsl(240, 4%, 36%);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .select:hover {
   background-color: hsl(0, 0%, 93%);

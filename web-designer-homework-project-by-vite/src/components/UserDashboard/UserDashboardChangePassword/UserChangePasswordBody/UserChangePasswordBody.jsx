@@ -19,7 +19,11 @@ const UserChangePasswordBody = () => {
   const [hasFetched, setHasFetched] = useState(false);
   const [loginStatus, setLoginStatus] = useState('Off')
   const [compareOldAndNewPass, SetCompareOldAndNewPass] = useState('Off')
-    const { passwordFromDb, SetPasswordFromDb, setDashboardShowChangePassSuccess } = useContext( Context ); 
+    const { 
+    passwordFromDb, 
+    SetPasswordFromDb, 
+    setDashboardShowChangePassSuccess 
+  } = useContext( Context ); 
 
 
   const fetchData = async () => {

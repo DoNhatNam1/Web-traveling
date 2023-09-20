@@ -19,7 +19,11 @@ const Home = () => {
   const [toLocation, setToLocation] = useState("");
   const [departureDate, setDepartureDate] = useState("");
   const [value, setValue] = useState(5000000);
-  const { setSearchData, setIsSearching, setIsSearchingLoading } = useContext(Context);
+  const { 
+    setSearchData, 
+    setIsSearching, 
+    setIsSearchingLoading 
+  } = useContext(Context);
 
 
 

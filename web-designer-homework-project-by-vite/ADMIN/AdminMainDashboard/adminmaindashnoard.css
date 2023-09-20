@@ -1,0 +1,9 @@
+.admin-main-dashboard {
+  height: 652px;
+}
+.admin-main-dashboard .adminNavDiv {
+  flex-basis: 18%;
+}
+.admin-main-dashboard .adminContainDiv {
+  flex-basis: 82%;
+}/*# sourceMappingURL=adminmaindashnoard.css.map */

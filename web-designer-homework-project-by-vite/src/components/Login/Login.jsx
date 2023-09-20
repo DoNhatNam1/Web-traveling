@@ -16,7 +16,15 @@ const Login = () => {
   const [loginUserName, setLoginUserName] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [hasFetched, setHasFetched] = useState(false);
-  const { userAccounts, setUserAccounts, login, isLoggedIn, userData, registerStatus, setRegisterStatus } = useContext( Context )
+  const { 
+    userAccounts, 
+    setUserAccounts, 
+    login, 
+    isLoggedIn, 
+    userData, 
+    registerStatus, 
+    setRegisterStatus 
+  } = useContext( Context )
   const navigateTo = useNavigate()
   const [loginStatus, setLoginStatus] = useState('Off')
 
