@@ -1,41 +1,68 @@
-import React from "react";
+import React, { useState } from 'react'
 import "./adminnavbar.css";
-import { AiOutlineMenu } from 'react-icons/ai'
-import { AiFillSetting } from 'react-icons/ai'
-import { MdOutlineDashboard } from 'react-icons/md'
-import { MdMail } from 'react-icons/md'
-import { BsFillPieChartFill } from 'react-icons/bs'
-import { GiVerticalBanner } from 'react-icons/gi'
-import { CgUserList } from 'react-icons/cg'
-import { CgLogOut } from 'react-icons/cg'
-import { BsFillShieldLockFill } from 'react-icons/bs'
+import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai";
+import { AiFillSetting } from "react-icons/ai";
+import { MdOutlineDashboard } from "react-icons/md";
+import { MdMail } from "react-icons/md";
+import { BsFillPieChartFill } from "react-icons/bs";
+import { GiVerticalBanner } from "react-icons/gi";
+import { CgUserList } from "react-icons/cg";
+import { CgLogOut } from "react-icons/cg";
+import { BsFillShieldLockFill } from "react-icons/bs";
+import { AiFillCloseCircle } from "react-icons/ai";
+import logo from "../../src/assets/logo.png";
 
 const AdminNavBar = () => {
+  const [active, setActive] = useState('AdminnavBar')
+
+  // function to toggle navBar
   
+  const showNav = () =>{
+      setActive('activeAdminNavbar')
+  }
+  // function to remote navBar
+  const remoteNavbar = () =>{
+      setActive('AdminnavBar')
+  }
   return (
     <>
-      <div className="navbar-main">
-        <div className="logo-container">
-          <AiOutlineMenu />
-          <p>Logo</p>
+      <div className={active}>
+        <div className="logo-container flex">
+          <div onClick={showNav} className="toggleAdminNav">
+            <AiOutlineMenu className="admin-icon" />
+          </div>
+          <div onClick={remoteNavbar} className="closeAdminNavbar">
+            <AiFillCloseCircle className="admin-icon" />
+          </div>
+          <div className="logImgAndText">
+            <Link to="/admindashboard/maindashboard" className="flex">
+              <img
+                src={logo}
+                alt="Image Name"
+                className="admin-dashboard-logo"
+              />
+              <h2>Travel.</h2>
+            </Link>
+          </div>
         </div>
 
         <div className="navbar-body">
           <div className="admin-nav-group">
             <div className="admin-nav-title">
-              <h4>DASHBOARD&APPS</h4>
+              <p>DASHBOARD & APPS</p>
             </div>
 
             <ul className="admin-nav-select-item">
               <li className="admin-listItem">
                 <button>
-                  <MdOutlineDashboard />
+                  <MdOutlineDashboard className="admin-icon" />
                   <span>Dashboard</span>
                 </button>
               </li>
               <li className="admin-listItem">
                 <button>
-                  <GiVerticalBanner />
+                  <GiVerticalBanner className="admin-icon" />
                   <span>Apps</span>
                 </button>
               </li>
@@ -43,7 +70,7 @@ const AdminNavBar = () => {
           </div>
           <div className="admin-nav-group">
             <div className="admin-nav-title">
-              <h4>COMPONENTS & UI</h4>
+              <p>COMPONENTS & UI</p>
             </div>
 
             <ul className="admin-nav-select-item">
@@ -54,13 +81,13 @@ const AdminNavBar = () => {
               </li>
               <li className="admin-listItem">
                 <button>
-                  <CgUserList />
+                  <CgUserList className="admin-icon" />
                   <span>Forms & Tables</span>
                 </button>
               </li>
               <li className="admin-listItem">
                 <button>
-                  <BsFillPieChartFill />
+                  <BsFillPieChartFill className="admin-icon" />
                   <span>Charts</span>
                 </button>
               </li>
@@ -68,22 +95,22 @@ const AdminNavBar = () => {
           </div>
           <div className="admin-nav-group">
             <div className="admin-nav-title">
-              <h4>COLECTIONS</h4>
+              <p>COLECTIONS</p>
             </div>
 
             <ul className="admin-nav-select-item">
               <li className="admin-listItem">
-              <button>
+                <button>
                   <span>Widgets</span>
                 </button>
               </li>
               <li className="admin-listItem">
-              <button>
+                <button>
                   <span>Ecommerce</span>
                 </button>
               </li>
               <li className="admin-listItem">
-              <button>
+                <button>
                   <span>Pages</span>
                 </button>
               </li>
@@ -92,13 +119,13 @@ const AdminNavBar = () => {
 
           <div className="admin-nav-group">
             <div className="admin-nav-title">
-              <h4>LOGIN & ERROR</h4>
+              <p>LOGIN & ERROR</p>
             </div>
 
             <ul className="admin-nav-select-item">
               <li className="admin-listItem">
                 <button>
-                  <BsFillShieldLockFill />
+                  <BsFillShieldLockFill className="admin-icon" />
                   <span>Authentication</span>
                 </button>
               </li>
@@ -120,13 +147,13 @@ const AdminNavBar = () => {
           </div>
           <div className="admin-footer-item-nav">
             <button className="admin-nav-footer-button">
-              <MdMail />
+              <MdMail className="admin-icon" />
               <span>Email</span>
             </button>
           </div>
           <div className="admin-footer-item-nav">
             <button className="admin-nav-footer-button">
-              <CgLogOut />
+              <CgLogOut className="admin-icon" />
               <span>Log Out</span>
             </button>
           </div>

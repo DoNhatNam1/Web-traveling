@@ -1,8 +1,31 @@
+:root {
+  --PrimaryColorAdminDashboard: rgba(12, 26, 50, 1);
+  --SecondaryColorAdminDashboard: rgba(18, 33, 60, 1);
+  --HoverCoverAdminDashboard: rgba(82, 106, 148, 1);
+  --whiteColorAdminDashboard: hsl(0, 0%, 100%);
+  --blackColorAdminDashboard: hsl(0, 0%, 18%);
+  --textColorAdminDashboard: hsl(240, 1%, 48%);
+  --bgColorAdminDashboard: hsl(220, 10%, 94%);
+  --greyTextAdminDashboard: rgb(190, 190, 190);
+  --inputColorAdminDashboard: hsl(330, 12%, 97%);
+  /* Font ang Typography */
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: .938rem;
+  --smallFontSize: .813rem;
+  --smallestFontSize: .75rem;
+}
+
 .admin-main-dashboard {
-  height: 652px;
+  width: 98vw;
+  height: 100vh;
 }
 .admin-main-dashboard .adminNavDiv {
+  height: 100%;
   flex-basis: 18%;
+  background-color: var(--PrimaryColorAdminDashboard);
 }
 .admin-main-dashboard .adminContainDiv {
   flex-basis: 82%;

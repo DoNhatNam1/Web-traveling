@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './sidebarsection.css'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '../../../assets/logo.jpg'
+import logo from '../../../assets/logo.png'
 import { IoMdSpeedometer } from 'react-icons/io'
 import { IoTicketOutline } from 'react-icons/io5'
 import { AiOutlineStar } from 'react-icons/ai'
