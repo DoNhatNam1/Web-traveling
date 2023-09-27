@@ -22,7 +22,7 @@ import ProfileContainer from "./components/UserDashboard/UserDashboardProfile/Pr
 import ProfileContainer2 from "./components/UserDashboard/UserDashboardProfile/ProfileContainer2/ProfileContainer2";
 import ProfileEditMain from "./components/UserDashboard/UserDashboardProfile/ProfileEditMain/ProfileEditMain";
 import UserChangePasswordContainer from "./components/UserDashboard/UserDashboardChangePassword/UserChangePasswordContainer/UserChangePasswordContainer";
-import AdminMainDashBoard from "../ADMIN/AdminMainDashboard/AdminMainDashBoard";
+import AdminMainDashBoard from "./components/ADMIN/AdminMainDashboard/AdminMainDashBoard";
 
 const App = () => {
   const hours = 4;
