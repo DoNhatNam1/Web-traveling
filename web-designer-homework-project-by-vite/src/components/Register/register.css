@@ -135,9 +135,9 @@
   text-align: center;
   padding: 1.5rem 0;
 }
-.registerPage .container-register .formDiv .headerDiv img {
-  width: 60px;
-  padding-bottom: 0.5rem;
+.registerPage .container-register .formDiv .headerDiv .icon-register {
+  font-size: 40px;
+  color: var(--primaryColor);
 }
 .registerPage .container-register .formDiv .headerDiv h3 {
   font-size: 25px;
@@ -220,11 +220,11 @@
   }
   .registerPage .container-register .videoDiv .textDiv .title {
     font-size: 20px;
-    transform: translateY(-1.2rem);
+    transform: translateY(-1.4rem) !important;
   }
   .registerPage .container-register .videoDiv .textDiv p {
     padding: 1rem;
-    transform: translateY(-1.2rem);
+    transform: translateY(-1.4rem) !important;
   }
   .registerPage .container-register .videoDiv .footerDiv .text {
     font-size: 12px !important;
@@ -274,7 +274,11 @@
   }
   .registerPage .container-register .videoDiv .textDiv p {
     font-size: 12px;
-    transform: translateY(-1.5rem);
+    transform: translateY(-1.6rem) !important;
+    padding: 0.5rem !important;
+  }
+  .registerPage .container-register .videoDiv .footerDiv {
+    height: 30% !important;
   }
   .registerPage .container-register .videoDiv .footerDiv .btn-register {
     padding: 0.5rem 0.7rem !important;

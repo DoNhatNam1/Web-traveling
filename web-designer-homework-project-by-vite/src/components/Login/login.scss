@@ -145,9 +145,14 @@
                 text-align: center;
                 padding: 1.5rem 0;
 
-                img{
-                    width: 60px;
-                    padding-bottom: .5rem;
+                // img{
+                //     width: 60px;
+                //     padding-bottom: .5rem;
+                // }
+
+                .icon-login{
+                    font-size: 40px;
+                    color:var(--primaryColor);
                 }
 
                 h3{

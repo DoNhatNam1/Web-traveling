@@ -11,7 +11,7 @@ import { CgUserList } from "react-icons/cg";
 import { CgLogOut } from "react-icons/cg";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
-import logo from "../../src/assets/logo.png";
+import logo from "../../../assets/logo.png";
 
 const AdminNavBar = () => {
   const [active, setActive] = useState('AdminnavBar')
@@ -55,12 +55,12 @@ const AdminNavBar = () => {
 
             <ul className="admin-nav-select-item">
               <li className="admin-listItem">
-                <button>
+                <button className='btn-group-admin-nav flex'>
                   <MdOutlineDashboard className="admin-icon" />
                   <span>Dashboard</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <GiVerticalBanner className="admin-icon" />
                   <span>Apps</span>
@@ -74,18 +74,18 @@ const AdminNavBar = () => {
             </div>
 
             <ul className="admin-nav-select-item">
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <span>UI Elements</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <CgUserList className="admin-icon" />
                   <span>Forms & Tables</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <BsFillPieChartFill className="admin-icon" />
                   <span>Charts</span>
@@ -99,17 +99,17 @@ const AdminNavBar = () => {
             </div>
 
             <ul className="admin-nav-select-item">
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <span>Widgets</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <span>Ecommerce</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <span>Pages</span>
                 </button>
@@ -123,13 +123,13 @@ const AdminNavBar = () => {
             </div>
 
             <ul className="admin-nav-select-item">
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <BsFillShieldLockFill className="admin-icon" />
                   <span>Authentication</span>
                 </button>
               </li>
-              <li className="admin-listItem">
+              <li className="admin-listItem flex">
                 <button>
                   <span>Misecellaneous</span>
                 </button>

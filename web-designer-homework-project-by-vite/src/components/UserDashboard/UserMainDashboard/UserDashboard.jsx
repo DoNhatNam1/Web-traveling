@@ -31,7 +31,7 @@ import BodySection from './BodySectionMainDashboard/BodySection';
     } = useContext(Context); 
     const { id } = useParams();
     
-    const [inputValuePopupUserDashboard, setInputValuePopupUserDashboard] = useState("");
+    const [inputValuePopupUserDashboard, setInputValuePopupUserDashboard] = useState('');
     const [Timing, setTiming] = useState('');
     const [hasFetched, setHasFetched] = useState(false);
 
@@ -158,23 +158,33 @@ import BodySection from './BodySectionMainDashboard/BodySection';
           const handleSubmitPopUp = async (e) => {
             e.preventDefault();
             const currentDate = new Date();
+            console.log(currentDate)
             const currentTime = currentDate.getTime();
+            console.log(currentTime)
 
             const latestSubmitTime = new Date(Timing).getTime();
+            console.log(latestSubmitTime)
+
 
              // Calculate the time difference in milliseconds
               const timeDifference = currentTime - latestSubmitTime;
+            console.log(timeDifference)
 
 
               // Define 24hrs in milliseconds
               const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
+              console.log(oneDayInMilliseconds)
 
-              if(timeDifference < oneDayInMilliseconds && Timing !== ''){
+              console.log(inputValuePopupUserDashboard)
+              console.log(Timing)
+
+              if(((timeDifference < oneDayInMilliseconds) && inputValuePopupUserDashboard !== '') || (inputValuePopupUserDashboard === '' && (timeDifference < oneDayInMilliseconds))){
                 setDashboardShowSendingDelMessInOneDay(true);
                 navigateTo(`/userdashboard/maindashboard/${id}`);
                 setInputValuePopupUserDashboard('');
                 closePopupUserDashboard();
-              } else if(inputValuePopupUserDashboard !== '' && Timing === ''){
+              } else if(inputValuePopupUserDashboard !== '' && (timeDifference > oneDayInMilliseconds)){
+
                   try {
                     const response = await UserAccountMainDashBoardUrl.post(`/${id}`, {
                       MaTaiKhoan: id,
@@ -182,9 +192,9 @@ import BodySection from './BodySectionMainDashboard/BodySection';
                       ThoiGianGui: currentDate
                     });
                     navigateTo(`/userdashboard/maindashboard/${id}`);
+                    setDashboardShowSendingDelMessSucss(true);
                     console.log(response.data.datauseraccoutsendingdelmess);
                     addUserAccountsSendingDelMess(response.data.datauseraccoutsendingdelmess.useraccoutsendingdelmess);
-                    setDashboardShowSendingDelMessSucss(true);
                     setTiming('');
                     setInputValuePopupUserDashboard('');
                     closePopupUserDashboard();
@@ -192,7 +202,7 @@ import BodySection from './BodySectionMainDashboard/BodySection';
                     console.log(err);
                   }
                   
-                } else if ((inputValuePopupUserDashboard === '' && Timing === '') || (inputValuePopupUserDashboard === '' && Timing !== '')){
+                } else if ((inputValuePopupUserDashboard === '' && (timeDifference > oneDayInMilliseconds))){
                   navigateTo(`/userdashboard/maindashboard/${id}`);
                   setDashboardShowSendingDelMessFail(true);
                   setInputValuePopupUserDashboard('');

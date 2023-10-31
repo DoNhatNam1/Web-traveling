@@ -28,15 +28,14 @@
   overflow: auto;
 }
 .sideBar .logoDiv {
-  padding: 1.5rem 1.5rem 0;
+  padding: 1.5rem 1.5rem 0rem 0.5rem;
   cursor: pointer;
 }
-.sideBar .logoDiv img {
-  max-width: 30px !important;
+.sideBar .logoDiv .icon-userdashboard-logo {
   margin-right: 0.5rem;
-  background: var(--inputColorDashboard);
-  border-radius: 2px;
-  padding: 0.2rem;
+  margin-left: 0.5rem;
+  font-size: var(--biggestFontSize);
+  color: var(--PrimaryColorDashboard);
 }
 .sideBar .logoDiv h2 {
   font-size: var(--h2FontSize);
@@ -172,7 +171,7 @@
     padding-left: 0.5rem;
   }
 }
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 880px) {
   .sideBar .logoDiv {
     text-align: center;
     margin: auto;

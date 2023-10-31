@@ -152,7 +152,7 @@
   border: none;
 }
 .home .homeContent .cardDiv .searchButton:hover {
-  background: var(--PrimaryColor);
+  background: var(--SecondaryColor);
 }
 .home .homeContent .cardDiv .searchButton .searchOptions {
   -moz-column-gap: 0.7rem;

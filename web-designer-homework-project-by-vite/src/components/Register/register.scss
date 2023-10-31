@@ -145,9 +145,14 @@
                 text-align: center;
                 padding: 1.5rem 0;
 
-                img{
-                    width: 60px;
-                    padding-bottom: .5rem;
+                // img{
+                //     width: 60px;
+                //     padding-bottom: .5rem;
+                // }
+
+                .icon-register{
+                    font-size: 40px;
+                    color:var(--primaryColor);
                 }
 
                 h3{
@@ -254,12 +259,12 @@
                 .textDiv{
                     .title {
                         font-size: 20px;
-                        transform: translateY(-1.2rem);
+                        transform: translateY(-1.4rem) !important;
                     }
 
                     p{
                         padding: 1rem;
-                        transform: translateY(-1.2rem);
+                        transform: translateY(-1.4rem) !important;
                     }
                 }
 
@@ -348,12 +353,13 @@
 
                     p{
                         font-size: 12px;
-                        transform: translateY(-1.5rem);
+                        transform: translateY(-1.6rem) !important;
+                        padding: .5rem !important;
                     }
                 }
 
                 .footerDiv{
-                   
+                   height: 30% !important;
                     .btn-register{
                         padding: .5rem .7rem !important;
                         font-size: 12px;

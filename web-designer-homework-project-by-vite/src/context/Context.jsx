@@ -11,8 +11,7 @@ export const ContextProvider = (props) => {
   const [userAccounts, setUserAccounts] = useState([]);
   const [userAccountsSendingDelMess, setUserAccountsSendingDelMess] = useState([]);
   const[passwordFromDb, SetPasswordFromDb] = useState([]);
-
-    const [searchData, setSearchData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isSearchingLoading, setIsSearchingLoading] = useState(false);
   const [registerStatus, setRegisterStatus] = useState(false);

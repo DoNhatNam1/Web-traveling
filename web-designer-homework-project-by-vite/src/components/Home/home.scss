@@ -74,7 +74,7 @@
                 background: var(--whiteColor);
                 border-radius: 10px;
                 gap: 1rem;
-    
+                
                 label{
                     display: block;
                     color: var(--textColor);
@@ -82,7 +82,6 @@
                     font-size: 13px;
                     font-weight: 500;
                 }
-    
                 .label_total{
                     justify-content: space-between;
                     align-items: center;
@@ -111,6 +110,8 @@
                         &::placeholder{
                             font-size: 13px;
                         }
+
+
                     }
     
                     .icon{
@@ -118,10 +119,11 @@
                         color: var(--PrimaryColor) !important;
                         margin-left: 10px;
                     }
-    
+
                     .input[type=range]{
                         background: blue;
                     }
+    
                 }
 
                 .arrow{
@@ -167,7 +169,7 @@
                         border: none;
 
                         &:hover{
-                            background: var(--PrimaryColor);
+                            background: var(--SecondaryColor);
                         }
 
                     .searchOptions{

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import './sidebarsection.css'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '../../../assets/logo.png'
+// import logo from '../../../assets/logo.png'
+import { SiYourtraveldottv } from 'react-icons/si'
 import { IoMdSpeedometer } from 'react-icons/io'
 import { IoTicketOutline } from 'react-icons/io5'
 import { AiOutlineStar } from 'react-icons/ai'
@@ -77,7 +78,8 @@ const SideBarSection = () => {
     <div className='sideBar grid-dashboard'>
         <div className="logoDiv flex">
             <Link to = '/' className='flex'>
-           <img src={logo} alt="Image Name" />
+           {/* <img src={logo} alt="Image Name" /> */}
+           <SiYourtraveldottv className="icon-userdashboard-logo"/>
            <h2>Travel.</h2> 
            </Link>
         </div>

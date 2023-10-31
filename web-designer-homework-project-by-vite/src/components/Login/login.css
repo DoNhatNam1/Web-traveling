@@ -135,9 +135,9 @@
   text-align: center;
   padding: 1.5rem 0;
 }
-.loginPage .container-login .formDiv .headerDiv img {
-  width: 60px;
-  padding-bottom: 0.5rem;
+.loginPage .container-login .formDiv .headerDiv .icon-login {
+  font-size: 40px;
+  color: var(--primaryColor);
 }
 .loginPage .container-login .formDiv .headerDiv h3 {
   font-size: 25px;

@@ -3,7 +3,8 @@ import { Link, useNavigate} from 'react-router-dom'
 import './register.css'
 import bcrypt from 'bcryptjs';
 import video from '../../assets/video-rain.mp4'
-import logo from '../../assets/logo.jpg'
+// import logo from '../../assets/logos+icons - Copy/logo-GWELL.png'
+import { SiYourtraveldottv } from 'react-icons/si'
 import { Context } from '../../context/Context'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,7 +21,12 @@ const Register = () => {
   const [hasFetched, setHasFetched] = useState(false);
   const navigateTo = useNavigate()
 
-  const { userAccounts, addUserAccounts, setRegisterStatus, setUserAccounts } = useContext( Context )
+  const { 
+    userAccounts, 
+    addUserAccounts, 
+    setRegisterStatus, 
+    setUserAccounts 
+  } = useContext( Context )
 
   const fetchData = async () => {
     try {
@@ -121,7 +127,7 @@ const Register = () => {
               <video src={video} autoPlay muted loop></video>
 
               <div className="textDiv">
-                <h2 className="title">Tự do làm điều mà bản thân muốn</h2>
+                <h2 className="title">Tự do làm điều mình muốn</h2>
                 <p>Hãy cảm nhận vẻ đẹp thiên nhiên!</p>
               </div>
 
@@ -135,7 +141,8 @@ const Register = () => {
 
             <div className="formDiv flex">
               <div className="headerDiv">
-                <img src={logo} alt="Logo Image" />
+                {/* <img src={logo} alt="Logo Image" /> */}
+                <SiYourtraveldottv className="icon-register"/>
                 <h3>Hãy để chúng tôi biết bạn! </h3>
               </div>
 

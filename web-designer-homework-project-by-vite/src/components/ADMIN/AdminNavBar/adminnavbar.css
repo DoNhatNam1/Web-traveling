@@ -23,10 +23,11 @@
   height: 100%;
   flex-direction: column;
   gap: 1.5rem;
+  background-color: var(--PrimaryColorAdminDashboard);
 }
 .AdminnavBar .logo-container {
   height: 80px;
-  padding: 1rem 1rem 0;
+  padding: 1.3rem 1rem 0;
 }
 .AdminnavBar .logo-container .toggleAdminNav {
   width: 100%;
@@ -54,11 +55,16 @@
 }
 .AdminnavBar .navbar-body .admin-nav-group .admin-nav-title {
   color: var(--textColorAdminDashboard);
-  padding: 15px 25px;
+  padding: 20px 25px;
   font-size: 12px;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   opacity: 0.5;
+}
+.AdminnavBar .navbar-body .admin-nav-select-item .admin-listItem {
+  padding: 0.85rem 1.85rem;
+  width: 100%;
+  position: relative;
 }
 .AdminnavBar .navbar-body .admin-nav-select-item .admin-listItem button {
   border: none;
@@ -66,9 +72,15 @@
   background: none;
   padding: 10px 0px;
 }
+.AdminnavBar .navbar-body .admin-nav-select-item .admin-listItem button .admin-icon {
+  color: var(--textColorAdminDashboard);
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
 .AdminnavBar .navbar-body .admin-nav-select-item .admin-listItem button span {
   color: var(--textColorAdminDashboard);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 .AdminnavBar .navbar-body .admin-nav-select-item .admin-listItem button :hover {
